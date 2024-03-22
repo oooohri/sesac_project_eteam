@@ -45,6 +45,8 @@ function placesSearchCB(data, status, pagination) {
 }
 
 // console.log(datas);
+
+// * 장소 상세정보
 // 장소 상세 정보를 화면에 표시하는 함수
 function displayPlaceDetails(place) {
   // 카페이름 표시
@@ -65,4 +67,91 @@ document.addEventListener('DOMContentLoaded', function () {
     // 기존 내용에 선택된 태그 추가하여 업데이트
     contentTextarea.value = `${currentContent} ${tagText}`;
   });
+});
+
+// * 리뷰 작성하기
+document.addEventListener('DOMContentLoaded', function () {
+  const reviewForm = document.getElementById('reviewForm');
+  const userIdInput = document.getElementById('userId');
+  const submitButton = document.getElementById('btn_write');
+
+  // 리뷰 작성 폼 제출 시 이벤트 핸들러
+  reviewForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // 사용자가 입력한 사용자 ID
+    const userId = 'user123';
+
+    // 사용자가 입력한 리뷰 데이터
+    const reviews = [];
+    const tagGroups = document.querySelectorAll('.form-group-review');
+    tagGroups.forEach((tagGroup) => {
+      const tag = tagGroup.querySelector('.tag').textContent;
+      const rating = tagGroup.querySelector(
+        'input[name="star-rating"]:checked'
+      ).value;
+      const content = tagGroup.querySelector('.form-group-content').value;
+      reviews.push({ tag, rating, content });
+    });
+
+    // 패치를 통해 API에 데이터 전송 및 업데이트
+    updateReviews(userId, reviews);
+  });
+
+  // 리뷰 업데이트 버튼 클릭 시 이벤트 핸들러
+  submitButton.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    // 사용자가 입력한 사용자 ID
+    const userId = 'user123';
+
+    // 사용자가 입력한 리뷰 데이터
+    const reviews = [];
+    const tagGroups = document.querySelectorAll('.form-group-review');
+    tagGroups.forEach((tagGroup) => {
+      const tag = tagGroup.querySelector('.tag').textContent;
+      const rating = tagGroup.querySelector(
+        'input[name="star-rating"]:checked'
+      ).value;
+      const content = tagGroup.querySelector('.form-group-content').value;
+      reviews.push({ tag, rating, content });
+    });
+
+    // 패치를 통해 API에 데이터 전송 및 업데이트
+    updateReviews(userId, reviews);
+  });
+
+  const data = {
+    userID: 'aaaa',
+    review: '이 카페 카공하기 좋아요',
+    tag: ['mode'],
+  }[('분위기 졸아요', '카공하기 적합해요.')];
+
+  // 사용자가 작성한 리뷰 데이터를 패치하여 API에 전송하여 업데이트
+  function updateReviews(userId, reviews) {
+    const apiUrl = 'https://crudcrud.com/api/f02afa24be314ba0b8e3216b889a5edc';
+    const fetchOptions = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userId, reviews }),
+    };
+
+    fetch(apiUrl, fetchOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Updated reviews:', data);
+        // 성공적으로 업데이트된 후에 실행할 코드 작성
+        // 리뷰 html 을 브라우저에 추가하는 로직
+      })
+      .catch((error) => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }
 });
