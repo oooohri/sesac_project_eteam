@@ -1,0 +1,54 @@
+<!-- 부모 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent Page</title>
+  </head>
+  <body>
+    <!-- 자식 창을 표시할 버튼 -->
+    <button id="openChildWindow">Open Child Window</button>
+
+    <!-- 자식 창에서 전달한 데이터를 표시할 div -->
+    <div id="dataFromChild"></div>
+    <article class="regular">
+      <h2>textbox</h2>
+      <label for="tbuser">username:</label>
+      <input type="text" id="tbuser" />
+      <input type="button" id="btn1" value="click me" />
+    </article>
+    <script>
+      // 버튼 클릭 시 자식 창 열기
+      document
+        .getElementById('openChildWindow')
+        .addEventListener('click', function () {
+          // 자식 창 열기
+          var childWindow = window.open('child.html', 'childWindow');
+
+          // 자식 창이 로드되면 메시지 수신 대기
+          childWindow.onload = function () {
+            // 부모 창에서 자식 창으로 메시지 전송
+            childWindow.postMessage('selectDiv', '*');
+          };
+        });
+
+      // 메시지 수신
+      window.addEventListener('message', function (event) {
+        // 자식 창에서 전달된 데이터 확인
+        if (event.data && event.data.type === 'divContent') {
+          var divContent = event.data.content;
+          // 받은 데이터를 표시할 div에 삽입
+          document.getElementById('dataFromChild').innerText = divContent;
+          const txt1 = document.getElementById('tbuser');
+          const btn1 = document.getElementById('btn1');
+          const out1 = document.getElementById('output1');
+          function fun1() {
+            out1.innerHTML = txt1.value;
+          }
+          btn1.addEventListener('click', fun1);
+        }
+      });
+    </script>
+  </body>
+</html>
