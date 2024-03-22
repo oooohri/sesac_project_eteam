@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=
+    <button class="filter-btn" data-filter="콘센트">콘센트</button>
+    <button class="filter-btn" data-filter="충전">충전</button>
+    <button class="filter-btn" data-filter="노트북 사용">노트북 사용</button>
+
+    <div id="filtered-results">
+      <!-- 필터링된 결과가 여기에 표시됩니다 -->
+    </div>
+    , initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 필터링할 요소들을 선택합니다
+      var filterButtons = document.querySelectorAll('.filter-btn');
+      var filteredResults = document.getElementById('filtered-results');
+
+      // 각 필터 버튼에 클릭 이벤트를 추가합니다
+      filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var filterKeyword = this.getAttribute('data-filter'); // 클릭된 버튼의 데이터 필터 키워드를 가져옵니다
+          filterResults(filterKeyword); // 필터링 함수를 호출하여 결과를 업데이트합니다
+        });
+      });
+
+      // 필터링 함수 정의
+      function filterResults(keyword) {
+        // 필터링된 결과를 초기화합니다
+        filteredResults.innerHTML = '';
+
+        // 실제로는 여기에서 특정 데이터나 요소들을 가져와서 필터링 작업을 수행합니다.
+        // 예를 들어, 특정 클래스를 가진 요소들을 가져와서 필터링합니다.
+        var filteredElements = document.querySelectorAll(
+          '.place-element[data-keywords*="' + keyword + '"]'
+        );
+
+        // 필터링된 결과를 화면에 출력합니다
+        filteredElements.forEach(function (element) {
+          // 필터링된 요소를 화면에 추가합니다
+          var resultItem = document.createElement('div');
+          resultItem.textContent = element.textContent; // 예를 들어, 각 요소의 텍스트 내용을 출력합니다
+          filteredResults.appendChild(resultItem);
+        });
+      }
+    </script>
+  </body>
+</html>
