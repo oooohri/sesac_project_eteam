@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페로_메인</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./main_카페찾기버튼.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="path/to/uikit.min.css">
+      <link rel="stylesheet" href="css/uikit.min.css" />
+
+</head>
+<body>
+<!-- 마우스 커서 -->
+<div id="cursor" style="top: 1060px; left: 996px;"></div>
+<script src="./main.js"></script>
+
+    <!-- 헤더 -->
+    <!-- <header class="nav-bar">
+        <div class="nav-bar-left">
+            <div class="logo-box">
+                <a href="#">
+                    <img src="./img/카페로_로고.PNG" alt="카페로로고">
+                </a>
+            </div>
+        </div>
+        <div class="nav-bar-right">
+            <div class="login-btn">로그인</div>
+            <div class="menu-btn">
+                <a class="nav-bar-toggle">
+                    <div class="ham-btn">
+                        <div class="icon"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header> -->
+
+    <!-- 메인 -->
+    <main>
+        <!-- 카페 광고 섹션 -->
+        <section class="main-section cafe-add"> 카페 광고 파트
+        </section>
+
+        <!-- 지도에서 카페 찾기 섹션 -->
+        <section class="main-section cafe-search">
+            <div class="container-1160 special-margin-main-search">
+                <div style="max-width: 360px; margin: 0 auto;">
+                  <div class="form-controls main-search-input">
+                    <form action="/map_finder">
+                      <input class="search-input border-radius" id="sentence-input" type="text" autocomplete="off" name="keyword" placeholder="지도를 검색해보세요" onclick="trackOutboundLink('home_cta','btn_click','검색input');">
+                      <button type="submit" class="search-btn" onclick="trackOutboundLink('home_cta','btn_click','검색icon');">
+                        <!-- 돋보기 아이콘 넣기 -->
+                        <img src="" alt="검색">
+                      </button>
+                    </form>
+                  </div>
+                  <div class="button-box" style="margin-top: 14px;">
+                    <a href="#">
+                    <div class="button shadow bg-sub text-white">
+                        <span>지도에서 카페 찾기</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <!-- 태그별 카페 찾기 섹션 -->
+        <section class="main-section cafe-search-tag">
+            <div class="cafe-tag-header">
+                <div class="cafe-tag-title">태그로 카페 찾기</div>
+            </div>
+            <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- 인터뷰 섹션 -->
+        <section class="main-section cafe-interview">
+            <div class="inner">
+                <div class="cafe-interview-left">
+                    <div class="cafe-interview-left-header">THE CAFE &amp;<br class=" n-h"> INTERVIEW</div>
+                    <div class="contents__box-arrow interview-left-arrow">
+                        <img src="" alt="">
+                    </div>
+                    <div class="news_events__left__direct">
+                        <img class="direct-circle" src="./img/img/2x/caferow 원.png" alt="">
+                        <a href="#">
+                            <img class="direct-arrow" src="./img/img/2x/화살표.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="cafe-interview-right" id="ingList">
+                    <div class="right-contents__box ingDetail" data-idx="454" data-slideinx="0">    
+                        <div class="contents__box-info">        
+                            <span class="info-type">INTERVIEW</span>        
+                            <span class="info-read">[NEW CAFE] 홍대 숨은 보석 NERF</span>        
+                            <span class="info-cafe">바나나 푸딩이 맛있는 모던한 공간</span>    
+                        </div>    
+                        <div class="contents__box-img">
+                            <img src="./img/img/너프카페.PNG">
+                        </div>    
+                        <div class="contents__box-arrow">
+                            <img src="./img/img/2x/화살표.png">
+                        </div>
+                    </div>
+                    <div class="right-contents__box ingDetail" data-idx="447" data-slideinx="1">    
+                        <div class="contents__box-info">        
+                            <span class="info-type">INTERVIEW</span>        
+                            <span class="info-read">[HOT CAFE] 동묘 올덴브라운</span>        
+                            <span class="info-cafe">넓고 섬세한 공간들이 매력만점</span>    
+                        </div>    
+                        <div class="contents__box-img">
+                            <img src="./img/img/올덴브라운 카페.PNG">
+                        </div>    
+                        <div class="contents__box-arrow">
+                            <img src="./img/img/2x/화살표.png">
+                        </div>
+                    </div>
+                    <div class="right-contents__box ingDetail" data-idx="438" data-slideinx="2">    
+                        <div class="contents__box-info">        
+                            <span class="info-type">INTERVIEW</span>        
+                            <span class="info-read">[TODAY'S CAFE] 신월동 제3화원</span>        
+                            <span class="info-cafe">푸릇한 식물과 감미로운 BGM이 일품</span>    
+                        </div>    
+                        <div class="contents__box-img">
+                            <img src="./img/img/제3화원 카페.PNG"></div>    
+                            <div class="contents__box-arrow">
+                                <img src="./img/img/2x/화살표.png">   
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 사장님 컨택 -->
+        <section class="main-section ceo-contact">
+            사장님 컨택하는 포스터 넣을 것.
+        </section>
+
+        <!-- 하단 이미지 섹션 -->
+        <section class="main-section identity__wrap">
+            <div class="inner">
+                <div class="identity__hd"><img src="./img/img/2x/중간 문구.png" alt="카페로"></div>
+                <div class="identity__bg"><img src="./img/img/카페사진.PNG" alt=""></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer-contact">
+        <a href="#">facebook</a>
+        <a href="#">instagram</a>
+        <a href="#">e-mail</a>
+        <div>추가 메세지</div>
+        <br>
+        <div>
+            <a href="#">서비스 이용약관</a>
+            <a href="#">개인정보처리방침</a>
+        </div>
+    <footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.23/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.23/js/uikit-icons.min.js"></script>
+</html>
