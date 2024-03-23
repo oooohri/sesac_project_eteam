@@ -1,0 +1,52 @@
+A:link {
+    text-decoration: none;
+    color: inherit;
+    background: inherit;
+}
+
+.no-decoration {
+    text-decoration: none;
+    color: #fff;
+    background: inherit;
+}
+
+.underline-hover {
+    text-decoration: none;
+    color: #fff; 
+    transition: color 0.3s ease; 
+}
+
+.underline-hover:hover {
+    text-decoration: underline;
+    color: #fff; 
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.border-t {
+    border-top-width: 1px;
+}
+
+.text-pink {
+    color: #f07579;
+}
+
+.text-red {
+    color: #ce3536;
+}
+
+.text-white {
+    color: #fff;
+}
