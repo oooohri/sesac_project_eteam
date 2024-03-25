@@ -1,8 +1,10 @@
 * {
   margin: 0;
-  padding: 0;
+
   box-sizing: border-box;
   font-family: GangwonEdu_OTFBoldA;
+
+  color: #f07579;
 }
 @font-face {
   font-family: 'GangwonEdu_OTFBoldA';
@@ -25,7 +27,7 @@ li {
   --light: #f9f9f9;
   --blue: #3c91e6;
   --light-blue: #cfe8ff;
-  --grey: #f3c58f;
+  --grey: #f5f5dc;
   --dark-grey: #aaaaaa;
   --dark: #342e37;
   --red: #db504a;
@@ -160,6 +162,12 @@ body {
 /* SIDEBAR */
 
 /* CONTENT */
+.inputcontainer {
+  padding: 0;
+  width: 800px;
+  position: fixed;
+  margin-left: 20%;
+}
 #content {
   position: relative;
   width: calc(100% - 280px);
@@ -296,6 +304,11 @@ body {
 /* NAVBAR */
 
 /* MAIN */
+#fade {
+  height: 400px;
+  width: 400px;
+  background: white;
+}
 #content main {
   width: 100%;
   padding: 36px 24px;
@@ -420,6 +433,25 @@ td button i {
 .table-data {
   display: none;
 }
+.table {
+  position: fixed;
+  right: 50%;
+  top: 13%;
+  height: 400px;
+}
+table,
+th,
+tr {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  right: 50%;
+  padding: 15px;
+  background-color: whitesmoke;
+  text-align: center;
+  margin: 0;
+}
 .upload i {
   color: #fff;
   font-size: 35px;
@@ -435,42 +467,39 @@ td button i {
 
 .modal-body form .inputField {
   flex-basis: 70%;
-  border-left: 5px groove rgb(216, 216, 230);
-  padding-left: 0;
-  position: fixed;
+  padding-left: 100px;
   left: 40%;
   top: 11%;
-  width: 30%;
-  background-color: #fff;
 }
-
+.fix {
+  display: none;
+}
 form .inputField > div {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
   position: relative;
   top: 30%;
-}
-
-form .inputField > div label {
-  font-size: 30px;
-  font-weight: 500;
+  justify-content: space-between;
 }
 
 #userForm form .inputField > div label::after {
   content: '*';
   color: red;
+  background: white;
 }
 
 form .inputField > div input {
   width: 75%;
-  padding: 5px;
+  padding: auto;
   border: none;
   outline: none;
   background: transparent;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid rgb(235, 83, 184);
+  font-size: 20px;
+  line-height: 10px;
+  background-color: #fff;
 }
 
 .modal-footer .submit {
@@ -543,12 +572,20 @@ form .inputField > div input {
 }
 
 /**/
-
+.btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 10%;
+}
 label {
-  font-size: 18px;
+  font-size: 20px;
   color: #333;
   margin-bottom: 5px;
   display: block;
+  color: #f07579;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
 }
 
 input[type='text'],
@@ -628,8 +665,8 @@ select {
   background-color: #d14a4f;
 }
 .container {
-  max-width: 800px;
-  margin: 50px auto;
+  max-width: 10000px;
+  margin: 10px auto;
   padding: 30px;
   background-color: #fff;
   border-radius: 10px;
@@ -698,6 +735,11 @@ select {
   overflow: hidden;
   cursor: pointer;
   min-height: 65px;
+}
+#myForm {
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 #placesList .item span {
   display: block;

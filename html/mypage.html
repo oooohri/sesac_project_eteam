@@ -9,12 +9,29 @@
       href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/mypage.css" />
 
     <title>MyPage</title>
   </head>
   <body>
+    <i class="bx bx-menu"></i>
     <!-- SIDEBAR -->
     <section id="sidebar">
       <a href="#" class="brand">
@@ -42,14 +59,14 @@
         </li>
       </ul>
       <ul class="side-menu">
-        <li>
+        <li data-li="fix">
           <a href="#">
             <i class="bx bxs-cog"></i>
             <span class="text">내 정보 변경</span>
           </a>
         </li>
         <li>
-          <a href="#" class="logout">
+          <a href="login.html" class="logout">
             <i class="bx bxs-log-out-circle"></i>
             <span class="text">로그아웃</span>
           </a>
@@ -62,7 +79,6 @@
     <section id="content">
       <!-- NAVBAR -->
       <nav>
-        <i class="bx bx-menu"></i>
         <a href="#" class="nav-link"></a>
         <form action="#">
           <div class="form-input">
@@ -88,63 +104,65 @@
       <main>
         <div class="item info table-data1">
           <!--Modal Form-->
-          <div class="modal fade" id="userForm">
+
+          <!--Readdata-->
+          <div class="modal fade" id="readData">
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
+                <h2>나의 페이지</h2>
                 <div class="modal-body">
                   <form action="#" id="myForm">
                     <div class="card imgholder">
-                      <label for="imgInput" class="upload">
-                        <input type="file" name="" id="imgInput" />
-                        <i class="bx bx-plus-circle"></i>
-                      </label>
                       <img
-                        src="./Profile Icon.webp"
+                        src="../img/profileIcon.webp"
                         alt=""
                         width="400"
                         height="400"
                         class="img"
                       />
                     </div>
+                    <div class="inputcontainer">
+                      <div class="inputField">
+                        <div>
+                          <label for="name"
+                            ><i class="bx bxs-user"></i>이름</label
+                          >
+                          <input type="text" name="" id="name1" disabled />
+                        </div>
+                        <div>
+                          <label for="phone"
+                            ><i class="bx bxs-phone"></i>전화번호</label
+                          >
+                          <input
+                            type="number"
+                            name=""
+                            id="phonenumber"
+                            disabled
+                          />
+                        </div>
 
-                    <div class="inputField">
-                      <div>
-                        <label for="name"
-                          ><i class="bx bxs-user"></i>이름</label
-                        >
-                        <input type="text" name="" id="name" required />
-                      </div>
-                      <div>
-                        <label for="phone"
-                          ><i class="bx bxs-phone"></i>전화번호</label
-                        >
-                        <input type="number" name="" id="age" required />
-                      </div>
+                        <div>
+                          <label for="email"
+                            ><i class="bx bxs-envelope"></i>이메일</label
+                          >
+                          <input type="email" name="" id="email" disabled />
+                        </div>
 
-                      <div>
-                        <label for="email"
-                          ><i class="bx bxs-envelope"></i>이메일</label
-                        >
-                        <input type="email" name="" id="email" required />
-                      </div>
-
-                      <div>
-                        <label for="sDate"
-                          ><i class="bx bxs-calendar"></i>생년월일</label
-                        >
-                        <input type="date" name="" id="sDate" required />
+                        <div>
+                          <label for="sDate"
+                            ><i class="bx bxs-calendar"></i>생년월일</label
+                          >
+                          <input type="date" name="" id="sDate" disabled />
+                        </div>
+                        <div>
+                          <label for="sDate"
+                            ><i class="bx bxs-location"></i>주소</label
+                          >
+                          <input type="text" name="" id="slocation" disabled />
+                        </div>
                       </div>
                     </div>
                   </form>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    form="myForm"
-                    class="btn btn-primary submit"
-                  >
-                    Submit
-                  </button>
                 </div>
               </div>
             </div>
@@ -459,49 +477,49 @@
                   class="day-button"
                   value="월요일"
                   id="monday"
-                  onclick="toggleOpeningHours('monday')"
+                  onclick="toggleOpeningHours('월요일')"
                 />
                 <input
                   type="button"
                   class="day-button"
                   value="화요일"
                   id="tuesday"
-                  onclick="toggleOpeningHours('tuesday')"
+                  onclick="toggleOpeningHours('화요일')"
                 />
                 <input
                   type="button"
                   class="day-button"
                   value="수요일"
                   id="wednesday"
-                  onclick="toggleOpeningHours('wednesday')"
+                  onclick="toggleOpeningHours('수요일')"
                 />
                 <input
                   type="button"
                   class="day-button"
                   value="목요일"
                   id="thursday"
-                  onclick="toggleOpeningHours('thursday')"
+                  onclick="toggleOpeningHours('목요일')"
                 />
                 <input
                   type="button"
                   class="day-button"
                   value="금요일"
                   id="friday"
-                  onclick="toggleOpeningHours('friday')"
+                  onclick="toggleOpeningHours('금요일')"
                 />
                 <input
                   type="button"
                   class="day-button"
                   value="토요일"
                   id="saturday"
-                  onclick="toggleOpeningHours('saturday')"
+                  onclick="toggleOpeningHours('토요일')"
                 />
                 <input
                   type="button"
                   class="day-button"
                   value="일요일"
                   id="sunday"
-                  onclick="toggleOpeningHours('sunday')"
+                  onclick="toggleOpeningHours('일요일')"
                 />
               </div>
               <textarea
@@ -566,26 +584,114 @@
             </div>
             <ul class="todo-list">
               <li class="completed">
-                <p>Todo List</p>
+                <input type="text" placeholder="Todo List" />
                 <i class="bx bx-dots-vertical-rounded"></i>
               </li>
               <li class="completed">
-                <p>Todo List</p>
+                <input type="text" placeholder="Todo List" />
                 <i class="bx bx-dots-vertical-rounded"></i>
               </li>
               <li class="not-completed">
-                <p>Todo List</p>
+                <input type="text" placeholder="Todo List" />
                 <i class="bx bx-dots-vertical-rounded"></i>
               </li>
               <li class="completed">
-                <p>Todo List</p>
+                <input type="text" placeholder="Todo List" />
                 <i class="bx bx-dots-vertical-rounded"></i>
               </li>
               <li class="not-completed">
-                <p>Todo List</p>
+                <input type="text" placeholder="Todo List" />
                 <i class="bx bx-dots-vertical-rounded"></i>
               </li>
             </ul>
+          </div>
+        </div>
+        <div class="item fix">
+          <div class="modal fade" id="userForm">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form action="#" id="myForm">
+                    <div class="card imgholder">
+                      <label for="imgInput" class="upload">
+                        <input type="file" name="" id="imgInput" />
+                        <i class="bx bx-plus-circle"></i>
+                      </label>
+                      <img
+                        src="../img/profileIcon.webp"
+                        alt=""
+                        width="400"
+                        height="400"
+                        class="img"
+                      />
+                    </div>
+                    <div class="inputcontainer">
+                      <div class="inputField">
+                        <div>
+                          <label for="name"
+                            ><i class="bx bxs-user"></i>이름</label
+                          >
+                          <input type="text" name="" id="name" required />
+                        </div>
+                        <div>
+                          <label for="phone"
+                            ><i class="bx bxs-phone"></i>전화번호</label
+                          >
+                          <input
+                            type="number"
+                            name=""
+                            id="phonenumber"
+                            required
+                          />
+                        </div>
+
+                        <div>
+                          <label for="email"
+                            ><i class="bx bxs-envelope"></i>이메일</label
+                          >
+                          <input type="email" name="" id="email" required />
+                        </div>
+
+                        <div>
+                          <label for="sDate"
+                            ><i class="bx bxs-calendar"></i>생년월일</label
+                          >
+                          <input type="date" name="" id="sDate" required />
+                        </div>
+                        <div>
+                          <label for="sDate"
+                            ><i class="bx bxs-location"></i>주소</label
+                          >
+                          <input type="text" name="" id="slocation" required />
+                        </div>
+
+                        <div class="modal-footer">
+                          <button
+                            data-bs-toggle="modal"
+                            data-bs-target="#userForm"
+                            type="button"
+                            form="myForm"
+                            class="btn btn-primary submit"
+                            onclick="setInputValue()"
+                          >
+                            입력
+                          </button>
+                          <button
+                            data-bs-toggle="modal"
+                            data-bs-target="#readData"
+                            type="button"
+                            form="myForm"
+                            class="btn btn-primary submit"
+                          >
+                            버튼
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -593,6 +699,6 @@
     </section>
     <!-- CONTENT -->
 
-    <script src="script.js"></script>
+    <script src="../js/mypage.js"></script>
   </body>
 </html>
