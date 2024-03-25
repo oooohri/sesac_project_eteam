@@ -170,12 +170,7 @@ body,
 }
 
 /* *리뷰 작성하기 */
-/* 태그 */
-.tag {
-  border-radius: 30px;
-  border-color: #f07579;
-  background-color: transparent;
-}
+
 .accordion-collapse {
   display: none;
 }
@@ -223,45 +218,12 @@ body,
   flex: 1;
 }
 
-/* 사진추가 */
-.form-group-content {
-  display: flex;
-  flex-direction: row;
-}
-.addPic-container {
-  position: relative;
-  justify-content: center; /* 아이콘을 수평 가운데 정렬 */
-  align-items: center; /* 아이콘을 수직 가운데 정렬 */
-  cursor: pointer;
-}
-.addPic-container {
-  display: flex;
-  flex: 0.1;
-  background-color: rgba(128, 128, 128, 0.462);
-}
-.form-control {
-  display: flex;
-  flex: 0.9;
-}
-.plus-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  width: 50px;
-  color: white;
-  border: none;
-}
-
-#addPic {
-  display: none;
-}
-
 /* 별점 */
 .star-rating {
   display: flex;
   justify-content: center;
+  color: #f3c58f;
+  font-size: 20px;
 }
 
 .star {
@@ -308,6 +270,21 @@ body,
   margin-left: auto;
 }
 /* *리뷰상세 */
+/* 태그 */
+.tag {
+  border-radius: 30px;
+  border-color: #f07579;
+  background-color: transparent;
+  cursor: pointer;
+}
+.tag:hover {
+  background-color: #f07579;
+  color: white; /* 활성화된 태그의 배경색 */
+}
+.tag:focus {
+  background-color: #f07579;
+  color: white; /* 활성화된 태그의 배경색 */
+}
 .filter-options {
   display: flex;
   justify-content: right;

@@ -171,7 +171,7 @@ const reviewData = [
     date: '2024.04.21',
     image: 'image-url-2.jpg',
     tags: ['#콘센트', '', '#음악', '', ''],
-    ratings: ['☆☆☆☆☆', '', '☆☆☆☆☆', '', ''],
+    ratings: ['3', '', '3', '', ''],
     contents: ['콘센트 별로 없는듯', '', '음악이 시끄러움.', '', ''],
   },
   {
@@ -179,7 +179,7 @@ const reviewData = [
     date: '2024.04.20',
     image: 'image-url-2.jpg',
     tags: ['', '', '', '#카공 분위기', ''],
-    ratings: ['', '', '', '★★★★★', ''],
+    ratings: ['', '', '', '5', ''],
     contents: [
       '',
       '',
@@ -193,26 +193,20 @@ const reviewData = [
     date: '2024.04.19',
     image: 'image-url-2.jpg',
     tags: ['#콘센트', '', '', '#카공 분위기', ''],
-    ratings: ['★★★☆☆', '', '', '★★★★★', ''],
-    contents: [
-      '콘센트 그냥저냥 있어요',
-      '',
-      '',
-      '카공 오래해도 뭐라 안합니당',
-      '',
-    ],
+    ratings: ['2', '', '', '4', ''],
+    contents: ['콘센트 부족!!!!!!', '', '', '카공 오래해도 뭐라 안합니당', ''],
   },
   {
     author: '신사임당',
     date: '2024.04.18',
     image: 'image-url-2.jpg',
     tags: ['#콘센트', '#카페공간', '#음악', '#카공 분위기', '#직원 친절'],
-    ratings: ['', '★★★☆☆', '', '★★★★★', ''],
+    ratings: ['4', '', '', '2', ''],
     contents: [
-      '콘센트 그냥저냥 있어요',
+      '콘센트 각 자리마다 있는편.',
       '',
       '',
-      '카공 오래해도 뭐라 안합니당',
+      '여기 카공족들 싫어함 ㅠ',
       '',
     ],
   },
@@ -221,7 +215,7 @@ const reviewData = [
     date: '2024.04.17',
     image: 'image-url-2.jpg',
     tags: ['#콘센트', '', '', '#카공 분위기', ''],
-    ratings: ['★★★☆☆', '', '', '★★★★★', ''],
+    ratings: ['3', '', '', '5', ''],
     contents: [
       '콘센트 그냥저냥 있어요',
       '',
@@ -238,8 +232,19 @@ const showReview = document.querySelector('.show-review');
 
 // 리뷰 상세 정보 삽입 함수
 function insertReview(reviewData, selectedTag) {
-  // 리뷰 상세 정보 컨테이너 요소 가져오기
-  const reviewDetail = document.querySelector('.review_detail');
+  // 별점을 HTML 형태로 변환하는 함수
+  function getStarRatingHTML(rating) {
+    let starHTML = '';
+    // 별점에 따라 별 모양과 별빛을 문자열에 추가
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        starHTML += '★'; // 별빛 추가
+      } else {
+        starHTML += '☆'; // 별 모양 추가
+      }
+    }
+    return starHTML;
+  }
 
   // 리뷰 상세 정보 삽입
   const reviewContent = `
@@ -255,31 +260,27 @@ function insertReview(reviewData, selectedTag) {
   <div class="review-content-container">
     <!-- 리뷰 상세 내용 -->
     <div class="review-contentDetail">
-      <!-- 태그+별점 -->
-      ${
-        // 선택된 태그와 일치하는 리뷰 정보만 출력
-        reviewData.tags.includes(selectedTag)
-          ? `
+    <!-- 별점 및 내용 -->
+    ${
+      // 선택된 태그와 일치하는 리뷰 정보만 출력
+      reviewData.tags.includes(selectedTag)
+        ? `
           <div class="star-rating">
-          <div class="star-rating">
-            <input type="radio" class="star type2" value="1" />
-            <input type="radio" class="star type2" value="2" />
-            <input type="radio" class="star type2" value="3" />
-            <input type="radio" class="star type2" value="4" />
-            <input type="radio" class="star type2" value="5" />
+            ${getStarRatingHTML(
+              reviewData.ratings[reviewData.tags.indexOf(selectedTag)]
+            )}
           </div>
-        ${reviewData.ratings[reviewData.tags.indexOf(selectedTag)]}</div>
           <div class="review-content">${
             reviewData.contents[reviewData.tags.indexOf(selectedTag)]
           }</div>
-          </div>  
         `
-          : ''
-      }
+        : ''
+    }
     </div>
   </div>
   <hr />
 `;
+
   // 리뷰 상세 정보 삽입
   showReview.innerHTML += reviewContent;
 }

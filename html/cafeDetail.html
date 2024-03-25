@@ -25,8 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- 커서 -->
-    <link rel="stylesheet" href="/css/mouse_cursor.css" />
+
     <!-- 헤더 -->
     <link rel="stylesheet" href="/css/header.css" />
     <link
@@ -480,8 +479,6 @@
     </main>
 
     <div id="map"></div>
-    <!-- 마우스 커서 -->
-    <div id="cursor" style="top: 1060px; left: 996px"></div>
 
     <!-- ! 푸터 -->
     <footer></footer>
@@ -534,7 +531,7 @@
           datasets: [
             {
               label: '# of Votes',
-              data: [2, 4, 2, 3, 5],
+              data: [2, 0, 2, 3, 5],
               borderWidth: 1,
               borderColor: 'beige',
               backgroundColor: 'beige',
@@ -559,13 +556,6 @@
           },
         },
       });
-      let mouseCursor = document.getElementById('cursor');
-
-      document.addEventListener('mousemove', cursor);
-      function cursor(e) {
-        mouseCursor.style.top = e.pageY + document.body.scrollTop + 'px';
-        mouseCursor.style.left = e.pageX + document.body.scrollLeft + 'px';
-      }
     </script>
   </body>
 </html>
