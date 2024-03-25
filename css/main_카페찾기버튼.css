@@ -6,10 +6,6 @@
   margin: 0 auto;
 }
 
-.special-margin-main-search {
-  margin: 0 auto 190px !important;
-}
-
 .main-search-input {
   width: 100%;
   max-width: 400px;

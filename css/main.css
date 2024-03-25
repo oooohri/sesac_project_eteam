@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   height: fit-content;
+  background-color: beige;
 }
 
 * {
@@ -21,78 +22,25 @@ body {
   font-style: normal;
 }
 
+/* 글씨 색상 */
+.font-color {
+  color: #f07579;
+}
+
+.font-point-color {
+  color: #ce3536;
+}
+
 /* 커서 */
 #cursor {
   position: absolute;
   z-index: 9999999999999999;
   transform: translate(10%, 10%);
-  background-image: url(./img/img/2x/자산\ 14@2x.png);
+  background-image: url(../img/2x/자산\ 14@2x.png);
   background-size: contain;
   width: 45px;
   height: 45px;
   pointer-events: none;
-}
-
-header {
-  position: absolute;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  z-index: 9999;
-  background-color: aquamarine;
-}
-
-.nav-bar-left {
-  flex-wrap: wrap;
-  display: flex;
-  align-items: center;
-}
-
-.logo-box {
-  padding-left: 30px;
-}
-
-.nav-bar-right {
-  flex-wrap: wrap;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-
-.login-btn {
-  color: black;
-  font-size: 15px;
-  font-weight: 600;
-  margin-right: 10px;
-}
-
-.ham-btn .icon {
-  width: 30px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url(./img/햄버거버튼.PNG);
-}
-
-.ham-btn {
-  background-color: white;
-  border: 1px solid gray;
-  height: 50px;
-  width: 50px;
-  display: flex;
-  border-radius: 11px 0px 0px 11px;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-contact {
-  text-align: center;
-  font-size: 15px;
-  color: #aaaaaa;
-  letter-spacing: 0.2px;
-  width: 100%;
-  background-color: #a2a956;
-  padding: 100px 0 100px 0;
 }
 
 main {
@@ -101,16 +49,26 @@ main {
 }
 
 .main-section {
-  padding: 40px 0 0 0;
   text-align: center;
   font-size: 15px;
   position: relative;
-  background-color: beige;
 }
 
-.main-section.cafe-interview {
-  padding-bottom: 100px;
+/* ========메인 상단 배너===== */
+.cafe-add {
+  height: 520px;
 }
+.uk-slideshow-items > * {
+  height: 450px;
+}
+
+/* ========사장님 컨택======== */
+.ceo-contact {
+  padding-bottom: 50px;
+  padding-left: 18%;
+}
+
+/* ========메인 인터뷰======== */
 
 form {
   display: block;
@@ -163,8 +121,88 @@ form {
   text-align: center;
   letter-spacing: -0.5px;
   cursor: pointer;
-  background-color: blueviolet;
   color: white;
+}
+
+/* ================ 태그 검색 ================= */
+.cafe-search-tag {
+  max-width: 1080px;
+  padding: 50px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cafe-tag-header {
+  color: #f07579;
+  margin-bottom: 8px;
+  font-size: 22px;
+  display: flex;
+  font-weight: 500;
+  position: relative;
+}
+
+.cafe-tag-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.cafe-tag-title {
+  padding-left: 13px;
+  font-weight: 800;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cafe-tag-subtitle {
+  padding-left: 13px;
+  font-size: small;
+  opacity: 70%;
+}
+
+.text-white {
+  color: white;
+}
+
+.cards.filter-list-cards {
+  height: auto;
+  margin-left: 3px;
+}
+
+.cards {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards li {
+  padding: 10px;
+  margin: 0;
+}
+
+/* 카드 반응형 */
+@media (min-width: 960px) {
+  .uk-child-width-1-3 > * {
+    width: calc(100% * 1 / 3.001);
+  }
+}
+
+[class*='uk-child-width'] > * {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.cards .card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  text-align: center;
+  font-size: 15px;
+  border: none;
 }
 
 /* =================카페 인터뷰================= */
@@ -333,11 +371,6 @@ contents__box-info > .info-cafe {
   width: 100%;
   height: 200px;
   background-color: bisque;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
 }
 
 .identity__wrap {
