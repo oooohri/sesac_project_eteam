@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div>
-    <!-- * 카카오맵 - 지도퍼가기 -->
-<!-- 1. 지도 노드 -->
-<div id="daumRoughmapContainer1710910599035" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+ <!-- 이미지 추가 기능 -->
+      <div class="image-upload-section">
+        <label class="image-upload-label right-align">
+          이미지 추가
+          <input type="file" accept="image/*" multiple style="display: none" />
+        </label>
+      </div>
+      <!-- 광고 미리보기 영역 -->
+      <div class="preview-section">
+        <h2>광고 사진 미리보기</h2>
+        <img src="#" alt="광고 사진 미리보기" class="ad-preview" />
+        <script>
+          // 이미지 미리보기 기능 추가
+          const imageInput = document.querySelector('input[type="file"]');
+          const adPreview = document.querySelector('.ad-preview');
+          const adDescription = document.querySelector('.description');
 
-<!--
-	2. 설치 스크립트
-	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
--->
-<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+          imageInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                adPreview.src = e.target.result;
+                adPreview.alt = adDescription.value; // 광고 설명과 동일한 alt 속성 설정
+              };
+              reader.readAsDataURL(file);
+            }
+          });
 
-<!-- 3. 실행 스크립트 -->
-<script charset="UTF-8">
-	new daum.roughmap.Lander({
-		"timestamp" : "1710910599035",
-		"key" : "2im74",
-		"mapWidth" : "640",
-		"mapHeight" : "360"
-	}).render();
-</script>
-  </div>
-</body>
-</html>
+          // 광고 설명 입력 시 미리보기 alt 속성 업데이트
+          adDescription.addEventListener('input', function () {
+            adPreview.alt = adDescription.value;
+          });
+        </script>
+      </div>

@@ -1,0 +1,116 @@
+[
+  {
+    "author": "홍길동",
+    "date": "2024.04.16",
+    "image": "image-url-1.jpg",
+    "tags": [
+      "#concent_detail",
+      "#cafeSpace_detail",
+      "#music_detail",
+      "#mood_detail",
+      "#employee_detail"
+    ],
+    "ratings": ["★★★★☆", "", "", "", "★★★★★"],
+    "contents": [
+      "콘센트가 자리마다 있긴 하지만 1개씩이라 아쉬워요.",
+      "",
+      "",
+      "",
+      "직원이 친절해요!"
+    ]
+  },
+  {
+    "author": "이순신",
+    "date": "2024.04.17",
+    "image": "image-url-2.jpg",
+    "tags": [
+      "#concent_detail",
+      "#cafeSpace_detail",
+      "#music_detail",
+      "#mood_detail",
+      "#employee_detail"
+    ],
+    "ratings": ["☆☆☆☆☆", "", "☆☆☆☆☆", "", ""],
+    "contents": ["콘센트 별로 없는듯", "", "음악이 시끄러움.", "", ""]
+  },
+  {
+    "author": "김유신",
+    "date": "2024.04.18",
+    "image": "image-url-2.jpg",
+    "tags": [
+      "#concent_detail",
+      "#cafeSpace_detail",
+      "#music_detail",
+      "#mood_detail",
+      "#employee_detail"
+    ],
+    "ratings": ["", "★★★☆☆", "", "★★★★★", ""],
+    "contents": [
+      "콘센트 그냥저냥 있어요",
+      "",
+      "",
+      "카공 오래해도 뭐라 안합니당",
+      ""
+    ]
+  },
+  {
+    "author": "최지원",
+    "date": "2024.04.19",
+    "image": "image-url-2.jpg",
+    "tags": [
+      "#concent_detail",
+      "#cafeSpace_detail",
+      "#music_detail",
+      "#mood_detail",
+      "#employee_detail"
+    ],
+    "ratings": ["", "★★★☆☆", "", "★★★★★", ""],
+    "contents": [
+      "콘센트 그냥저냥 있어요",
+      "",
+      "",
+      "카공 오래해도 뭐라 안합니당",
+      ""
+    ]
+  },
+  {
+    "author": "신사임당",
+    "date": "2024.04.20",
+    "image": "image-url-2.jpg",
+    "tags": [
+      "#concent_detail",
+      "#cafeSpace_detail",
+      "#music_detail",
+      "#mood_detail",
+      "#employee_detail"
+    ],
+    "ratings": ["", "★★★☆☆", "", "★★★★★", ""],
+    "contents": [
+      "콘센트 그냥저냥 있어요",
+      "",
+      "",
+      "카공 오래해도 뭐라 안합니당",
+      ""
+    ]
+  },
+  {
+    "author": "황진이",
+    "date": "2024.04.21",
+    "image": "image-url-2.jpg",
+    "tags": [
+      "#concent_detail",
+      "#cafeSpace_detail",
+      "#music_detail",
+      "#mood_detail",
+      "#employee_detail"
+    ],
+    "ratings": ["", "★★★☆☆", "", "★★★★★", ""],
+    "contents": [
+      "콘센트 그냥저냥 있어요",
+      "",
+      "",
+      "카공 오래해도 뭐라 안합니당",
+      ""
+    ]
+  }
+]

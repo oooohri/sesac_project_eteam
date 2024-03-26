@@ -1,0 +1,344 @@
+/* 폰트 적용 */
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* reset */
+ul {
+  list-style: none;
+}
+div,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  /* border: 1px solid;
+  border-radius: 10px; */
+  font-family: GangwonEdu_OTFBoldA;
+  text-align: center;
+}
+
+/* 헤더 */
+
+/* 메인 */
+
+main {
+  position: relative;
+  z-index: 99;
+}
+/* 지도를 꽉 채우기 위한 스타일 */
+#map {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+main {
+  width: 1080px;
+  height: auto;
+  background-color: white;
+  margin: auto; /* 가운데 정렬을 위해 추가 */
+  margin-top: 10%;
+}
+/* 지도를 꽉 채우기 위한 스타일 */
+/* html,
+body,
+#map {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+} */
+
+.horizontal-layout {
+  /* display: flex; */
+  flex-direction: row;
+  overflow: hidden;
+}
+/* 사진과 기본 정보가 각각 화면의 반을 차지하도록 설정 */
+.picture {
+  float: left;
+  width: 50%;
+  height: 387px;
+}
+.basic_information {
+  float: left;
+  width: 50%;
+}
+/* *사진 */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-css-mode > .swiper-wrapper > .swiper-slide {
+  display: flex;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 이미지가 컨테이너 안에서 꽉 차도록 설정 */
+.picture img {
+  width: 100%;
+  height: auto; /* 이미지의 원본 비율을 유지 */
+}
+/* *기본정보 */
+.basic_cafe_infor_text {
+  flex: 0.5;
+}
+#cafeName {
+  font-size: 30px;
+  color: #f07579;
+}
+
+/* 그래프 */
+.graphWrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end; /* 아래쪽 정렬로 수정 */
+  flex-direction: column; /* 그래프와 텍스트를 수직으로 정렬하기 위해 추가 */
+}
+
+.graphWrap .graph {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  width: 100%;
+  flex: 1;
+}
+/* 그래프 막대기 */
+.graphWrap .graph > div {
+  width: 45px;
+  border-radius: 100px 100px 0px 0px;
+  background-color: #f3c48f3f;
+}
+
+.p-100 {
+  height: 0px; /* 초기 높이를 0으로 설정 */
+  animation: p-100 2s forwards; /* 애니메이션 이름, 지속 시간, 애니메이션 종료 후 상태 유지를 설정 */
+}
+
+@keyframes p-100 {
+  0% {
+    height: 0px; /* 초기 높이 */
+  }
+  100% {
+    height: 200px; /* 최종 높이 */
+  }
+}
+@keyframes p-50 {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 150px;
+  }
+}
+
+/* 그래프 텍스트 */
+.grapText {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+/* *리뷰 작성하기 */
+
+.accordion-collapse {
+  display: none;
+}
+
+.accordion-collapse.test {
+  display: block;
+}
+.accordion-button:after {
+  transform: rotate(0) !important;
+}
+.accordion-button.is-active:after {
+  transform: rotate(180deg) !important;
+}
+
+.accordion-button {
+  gap: 10px;
+  justify-content: center;
+}
+.accordion-button:after {
+  margin-left: 0 !important;
+}
+
+.review-form {
+  margin: 10px 0;
+}
+
+.review-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+
+.review-list .check-box label {
+  min-width: 80px;
+  text-align: left;
+}
+
+.review-list .form-group-content textarea {
+  min-width: 100%;
+}
+
+.review-form .form-group-content {
+  flex: 1;
+}
+
+/* 별점 */
+.star-rating {
+  display: flex;
+  justify-content: center;
+  color: #f3c58f;
+  font-size: 20px;
+}
+
+.star {
+  appearance: none;
+  padding: 1px;
+}
+
+.star.type2:after {
+  content: '☆' !important;
+}
+
+.star-rating input[type='radio']:checked:after {
+  content: '★' !important;
+}
+
+.star.type2:hover:after {
+  content: '☆' !important;
+}
+
+.star::after {
+  content: '☆';
+  color: #f3c58f;
+  font-size: 20px;
+}
+
+.star:hover::after,
+.star:has(~ .star:hover)::after,
+.star:checked::after,
+.star:has(~ .star:checked)::after {
+  content: '★';
+}
+
+.star:hover ~ .star::after {
+  content: '☆';
+}
+
+/* 작성하기 버튼 */
+#btn_write {
+  border-radius: 30px;
+  background-color: #f07579;
+  color: white;
+  border: none;
+  display: flex;
+  margin-left: auto;
+}
+/* *리뷰상세 */
+/* 태그 */
+.tag {
+  border-radius: 30px;
+  border-color: #f07579;
+  background-color: transparent;
+  cursor: pointer;
+}
+.tag:hover {
+  background-color: #f07579;
+  color: white; /* 활성화된 태그의 배경색 */
+}
+.tag:focus {
+  background-color: #f07579;
+  color: white; /* 활성화된 태그의 배경색 */
+}
+.filter-options {
+  display: flex;
+  justify-content: right;
+}
+.review-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.review-wrapper {
+  padding: 10px;
+}
+img {
+  flex: 0.2;
+}
+.author-user {
+  font-size: 25px;
+}
+.bg_bar {
+  background: #e5e5e5;
+  display: inline-block;
+  height: 15px;
+  width: 1px;
+}
+.btn-moreReview {
+  border: none;
+  background-color: transparent;
+}
+.btn-moreAll {
+  background-color: #f07579;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+.review_detail_tag button {
+  margin: 5px;
+}
+
+@media (max-width: 1120px) {
+  main {
+    width: 100%;
+  }
+  section {
+    margin: 0 20px;
+  }
+  .picture {
+    width: 100%;
+  }
+  .basic_information {
+    width: 100%;
+  }
+  .my-chart {
+    display: flex;
+    justify-content: center;
+  }
+}
