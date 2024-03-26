@@ -150,7 +150,8 @@ body {
   margin-bottom: 5px;
 }
 #sidebar .side-menu.top li.active a,
-#sidebar .side-menu.main li.active a {
+#sidebar .side-menu.main li.active a,
+#sidebar .side-menu li.active a {
   color: var(--blue);
 }
 
