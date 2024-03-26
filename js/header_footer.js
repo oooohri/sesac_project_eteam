@@ -3,7 +3,29 @@ document.querySelector('header').innerHTML = `<section id="sidebar">
   <i class="bx bxs-coffee"></i>
   <span class="text">카페로</span>
 </a>
+<ul class="side-menu main">
+<p class="sidebar-title">메뉴</p>
+  <li data-li="info" class="active">
+    <a href="#">
+      <i class="bx bxs-user"></i>
+      <span class="text">지도에서 카페찾기 </span>
+    </a>
+  </li>
+  <li data-li="post">
+    <a href="#">
+      <i class="bx bxs-pen"></i>
+      <span class="text">카페인터뷰</span>
+    </a>
+  </li>
+  <li data-li="table-data">
+    <a href="#">
+      <i class="bx bxs-doughnut-chart"></i>
+      <span class="text">고객센터</span>
+    </a>
+  </li>
+</ul>
 <ul class="side-menu top">
+<p class="sidebar-title">마이페이지</p>
   <li data-li="info" class="active">
     <a href="#">
       <i class="bx bxs-user"></i>
@@ -53,20 +75,15 @@ document.querySelector('header').innerHTML = `<section id="sidebar">
   </form>
   <input type="checkbox" id="switch-mode" hidden />
   <label for="switch-mode" class="switch-mode"></label>
-  <a href="#" class="notification">
-    <i class="bx bxs-bell"></i>
-    <span class="num">8</span>
-  </a>
-  <a href="#" class="profile">
-    <img src="img/people.png" />
-  </a>
+
+
 </nav>
 </section>`;
 
 document.querySelector('footer').innerHTML = `<div class="footer-container">
 <div class="row">
     <!-- Notice , FAQ, Service center cols -->
-    <div class="col-3 align-items-center ">
+    <div class="col-3 align-items-center">
         <div class="row p-2 text-start">
                 <a class="no-decoration underline-hover" href="#">공지사항</a>
         </div>
@@ -101,6 +118,7 @@ document.querySelector('footer').innerHTML = `<div class="footer-container">
 
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
+// 사이드메뉴
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
 
