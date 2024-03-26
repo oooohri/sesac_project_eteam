@@ -1,106 +1,129 @@
 document.querySelector('header').innerHTML = `<section id="sidebar">
-<a href="#" class="brand">
-  <i class="bx bxs-coffee"></i>w
-  <span class="text">카페로</span>
-</a>
-<ul class="side-menu top">
-  <li data-li="info" class="active">
-    <a href="#">
+  <a href="../html/main.html" class="brand">
+    <i class="bx bxs-coffee"></i>
+    <span class="text">카페로</span>
+  </a>
+  <ul class="side-menu main">
+  
+    <li data-li="info" class="active">
+      <a href="../html/map.html">
+        <svg class="bx bxs-map" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+        </svg>
+        <span class="text">지도에서 카페찾기 </span>
+      </a>
+    </li>
+
+    <li data-li="table-data">
+      <a href="../html/mypage.html">
       <i class="bx bxs-user"></i>
-      <span class="text">내 정보 </span>
-    </a>
-  </li>
-  <li data-li="post">
+        <span class="text">마이페이지</span>
+      </a>
+    </li>
+
+
+
+    <li data-li="post">
     <a href="#">
-      <i class="bx bxs-pen"></i>
-      <span class="text">내 글 올리기</span>
+    <svg class="bx bxs-map" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+      <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+    </svg>
+      <span class="text">카페 인터뷰</span>
     </a>
   </li>
+
   <li data-li="table-data">
     <a href="#">
-      <i class="bx bxs-doughnut-chart"></i>
-      <span class="text">할 일 목록 </span>
+    <svg class="bx bxs-question" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+    </svg>
+      <span class="text">Q&A</span>
     </a>
   </li>
-</ul>
-<ul class="side-menu">
-  <li data-li="fix">
-    <a href="#">
-      <i class="bx bxs-cog"></i>
-      <span class="text">내 정보 변경</span>
+
+  <li data-li="table-data">
+    <a href="../html/make_adv.html">
+    <svg class="bx bxs-adv" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+      <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
+      <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+    </svg>
+      <span class="text">혹시 사장님이세요?</span>
     </a>
   </li>
-  <li>
-    <a href="#" class="logout">
-      <i class="bx bxs-log-out-circle"></i>
-      <span class="text">로그아웃</span>
-    </a>
-  </li>
-</ul>
-</section>
 
-<section id="content">
-<nav>
-  <i class="bx bx-menu"></i>
-  <a href="#" class="nav-link"></a>
-  <form action="#">
-    <div class="form-input">
-      <input type="search" placeholder="Search..." />
-      <button type="submit" class="search-btn">
-        <i class="bx bx-search"></i>
-      </button>
-    </div>
-  </form>
-  <input type="checkbox" id="switch-mode" hidden />
-  <label for="switch-mode" class="switch-mode"></label>
-  <a href="#" class="notification">
-    <i class="bx bxs-bell"></i>
-    <span class="num">8</span>
-  </a>
-  <a href="#" class="profile">
-    <img src="/img/people.png" />
-  </a>
-</nav>
-</section>`;
+  </ul>
 
-document.querySelector('footer').innerHTML = `<div class="footer-container">
-<div class="row">
-    <!-- Notice , FAQ, Service center cols -->
-    <div class="col-3 align-items-center ">
-        <div class="row p-2 text-start">
-                <a class="no-decoration underline-hover" href="#">공지사항</a>
-        </div>
-        <div class="row p-2 text-start">
-                <a class="no-decoration underline-hover" href="#">자주 묻는 질문</a>
-        </div>
-        <div class="row p-2 text-start">
-                <a class="no-decoration underline-hover" href="#">고객센터</a>
-        </div>
-    </div>
-    <!-- Service center, privacy cols-->
-    <div class="col-3">
-        <div class="row p-2 text-start">
-                <a class="no-decoration underline-hover" href="/html/term.html">서비스 이용약관</a>
-        </div>
-        <div class="row p-2 text-start">
-                <a class="no-decoration underline-hover" href="/html/privacy.html">개인정보처리발침</a>
-        </div>
-    </div>
-    <div class="col-4">
-          <a href="https://www.facebook.com/" target="_blank" class="axo bkw"><img src="/img/logo_facebook.svg"/></a>
-          <a href="https://www.instagram.com/" target="_blank" class="axo bkw"><img src="/img/logo_insta.svg"/></a>                       
-          <a href="https://www.google.com/" target="_blank" class="axo bkw"><img src="/img/logo_gmail.svg"/></a>
-          <a href="https://www.naver.com/" target="_blank" class="axo bkw"><img src="/img/logo_naver.svg"/></a>
-    </div>
-</div>
-<hr aria-hidden="true" class="sb-rule mt-4" />
-<div class="border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-    <p class="text-xs leading-5 text-white">&copy; 2024 Cafero, Inc. All rights reserved.</p>
-</div>
-</div>`;
+  
+  <ul class="side-menu">
 
-const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+    <li>
+      <a href="../html/login.html" class="logout">
+        <i class="bx bxs-log-out-circle"></i>
+        <span class="text">로그인</span>
+      </a>
+    </li>
+  </ul>
+  </section>
 
+  <section id="content">
+  <nav>
+    <i class="bx bx-menu"></i>
+    <a href="#" class="nav-link"></a>
+    <form action="#">
+      <div class="form-input">
+        <input type="search" placeholder="Search..." />
+        <button type="submit" class="search-btn">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+    </form>
+    <input type="checkbox" id="switch-mode" hidden />
+    <label for="switch-mode" class="switch-mode"></label>
+
+
+  </nav>
+  </section>`;
+
+document.querySelector('footer').innerHTML = `
+  <div class="footer-container">
+  <div class="row">
+      <!-- Notice , FAQ, Service center cols -->
+      <div class="col-3 align-items-center">
+          <div class="row p-2 text-start">
+                  <a class="no-decoration underline-hover" href="#">공지사항</a>
+          </div>
+          <div class="row p-2 text-start">
+                  <a class="no-decoration underline-hover" href="#">자주 묻는 질문</a>
+          </div>
+          <div class="row p-2 text-start">
+                  <a class="no-decoration underline-hover" href="#">고객센터</a>
+          </div>
+      </div>
+      <!-- Service center, privacy cols-->
+      <div class="col-3">
+          <div class="row p-2 text-start">
+                  <a class="no-decoration underline-hover" href="/html/term.html">서비스 이용약관</a>
+          </div>
+          <div class="row p-2 text-start">
+                  <a class="no-decoration underline-hover" href="/html/privacy.html">개인정보처리발침</a>
+          </div>
+      </div>
+      <div class="col-4">
+            <a href="https://www.facebook.com/" target="_blank" class="axo bkw"><img src="/img/logo_facebook.svg"/></a>
+            <a href="https://www.instagram.com/" target="_blank" class="axo bkw"><img src="/img/logo_insta.svg"/></a>                       
+            <a href="https://www.google.com/" target="_blank" class="axo bkw"><img src="/img/logo_gmail.svg"/></a>
+            <a href="https://www.naver.com/" target="_blank" class="axo bkw"><img src="/img/logo_naver.svg"/></a>
+      </div>
+  </div>
+  <hr aria-hidden="true" class="sb-rule mt-4" />
+  <div class="border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+      <p class="text-xs leading-5 text-white">&copy; 2024 Cafero, Inc. All rights reserved.</p>
+  </div>
+  </div>`;
+
+const allSideMenu = document.querySelectorAll('#sidebar .side-menu li a');
+
+// 사이드메뉴
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
 
@@ -163,34 +186,3 @@ switchMode.addEventListener('change', function () {
     document.body.classList.remove('dark');
   }
 });
-
-document.querySelector('.info').style.display = 'block';
-let li_elements = document.querySelectorAll('.side-menu li');
-let item_elements = document.querySelectorAll('.item');
-for (let i = 0; i < li_elements.length; i++) {
-  li_elements[i].addEventListener('click', function () {
-    li_elements.forEach(function (li) {
-      li.classList.remove('active');
-    });
-    this.classList.add('active');
-    let li_value = this.getAttribute('data-li');
-    item_elements.forEach(function (item) {
-      item.style.display = 'none';
-      console.log(li_value);
-    });
-    if (li_value == 'info') {
-      document.querySelector('.' + li_value).style.display = 'block';
-      inputName1.value = JSON.parse(
-        localStorage.getItem('userProfile')
-      ).userName;
-    } else if (li_value == 'post') {
-      document.querySelector('.' + li_value).style.display = 'block';
-    } else if (li_value == 'table-data') {
-      document.querySelector('.' + li_value).style.display = 'block';
-    } else if (li_value == 'fix') {
-      document.querySelector('.' + li_value).style.display = 'block';
-    } else {
-      console.log('boli');
-    }
-  });
-}
