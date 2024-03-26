@@ -101,6 +101,7 @@ document.querySelector('footer').innerHTML = `<div class="footer-container">
 
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
+// 사이드메뉴 나타내기
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
 
