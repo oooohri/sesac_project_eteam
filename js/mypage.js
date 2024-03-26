@@ -126,7 +126,7 @@ submitBtn.addEventListener('click', () => {
   // modalTitle.innerText = 'Fill the Form';
   console.log(userName.value);
   isEdit = false;
-  imgInput.src = 'Profile Icon.webp';
+  imgInput.src = 'profileIcon.webp';
   localStorage.setItem(
     'userProfile',
     JSON.stringify({ userName: userName.value })

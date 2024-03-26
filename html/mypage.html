@@ -17,7 +17,7 @@
   <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
-      <a href="#" class="brand">
+      <a href="main.html" class="brand">
         <i class="bx bxs-coffee"></i>
         <span class="text">카페로</span>
       </a>
@@ -121,14 +121,14 @@
                           />
                         </div>
 
-                        <div>
+                        <div class="emaildate">
                           <label for="email"
                             ><i class="bx bxs-envelope"></i>이메일</label
                           >
                           <input type="email" name="" id="email" disabled />
                         </div>
 
-                        <div>
+                        <div class="emaildate">
                           <label for="sDate"
                             ><i class="bx bxs-calendar"></i>생년월일</label
                           >
@@ -136,7 +136,7 @@
                         </div>
                         <div>
                           <label for="sDate"
-                            ><i class="bx bxs-location"></i>주소</label
+                            ><i class="bx bxs-location-plus"></i>주소</label
                           >
                           <input type="text" name="" id="slocation" disabled />
                         </div>
@@ -508,14 +508,7 @@
                 rows="4"
                 required
               >
-		  월요일: 09:00 ~ 22:00
-		  화요일: 09:00 ~ 22:00
-		  수요일: 09:00 ~ 22:00
-		  목요일: 09:00 ~ 22:00
-		  금요일: 09:00 ~ 22:00
-		  토요일: 09:00 ~ 22:00
-		  일요일: 09:00 ~ 22:00</textarea
-              >
+              </textarea>
 
               <label for="other-info">기타 정보:</label>
               <textarea id="other-info" name="other-info" rows="4"></textarea>
@@ -523,7 +516,9 @@
               <label for="reason">카페를 등록하고 싶은 이유:</label>
               <textarea id="reason" name="reason" rows="4" required></textarea>
 
-              <button onclick="submitRequest()">등록 요청하기</button>
+              <button class="btnRequest" onclick="submitRequest()">
+                등록 요청하기
+              </button>
 
               <script>
                 function toggleOpeningHours(day) {
@@ -598,7 +593,7 @@
                         <i class="bx bx-plus-circle"></i>
                       </label>
                       <img
-                        src="/img/Profile Icon.webp"
+                        src="/img/profileIcon.webp"
                         alt=""
                         width="400"
                         height="400"
@@ -625,14 +620,14 @@
                           />
                         </div>
 
-                        <div>
+                        <div class="emaildate">
                           <label for="email"
                             ><i class="bx bxs-envelope"></i>이메일</label
                           >
                           <input type="email" name="" id="email" required />
                         </div>
 
-                        <div>
+                        <div class="emaildate">
                           <label for="sDate"
                             ><i class="bx bxs-calendar"></i>생년월일</label
                           >
@@ -640,7 +635,7 @@
                         </div>
                         <div>
                           <label for="sDate"
-                            ><i class="bx bxs-location"></i>주소</label
+                            ><i class="bx bxs-location-plus"></i>주소</label
                           >
                           <input type="text" name="" id="slocation" required />
                         </div>
@@ -663,7 +658,7 @@
                             form="myForm"
                             class="btn btn-primary submit"
                           >
-                            버튼
+                            수정
                           </button>
                         </div>
                       </div>
