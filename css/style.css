@@ -27,7 +27,7 @@ li {
   --lato: 'Lato', sans-serif;
 
   --light: #f9f9f9;
-  --blue: #3c91e6;
+  --blue: #f07579;
   --light-blue: #cfe8ff;
   --grey: #f5f5dc;
   --dark-grey: #aaaaaa;
@@ -101,7 +101,7 @@ body {
 #sidebar .side-menu li {
   height: 48px;
   background: transparent;
-  margin-left: 6px;
+  margin-left: 40px;
   border-radius: 48px 0 0 48px;
   padding: 4px;
 }
@@ -143,9 +143,18 @@ body {
   white-space: nowrap;
   overflow-x: hidden;
 }
-#sidebar .side-menu.top li.active a {
+#sidebar .side-menu p {
+  color: gray;
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#sidebar .side-menu.top li.active a,
+#sidebar .side-menu.main li.active a,
+#sidebar .side-menu li.active a {
   color: var(--blue);
 }
+
 #sidebar.hide .side-menu li a {
   width: calc(48px - (4px * 2));
   transition: width 0.3s ease;
@@ -307,7 +316,7 @@ footer {
   text-align: center;
   font-size: 15px;
   color: #fff;
-  background: #f07579;
+  background: #f07579b7;
 }
 
 .footer-container {
@@ -324,8 +333,11 @@ main {
 }
 
 footer {
-  margin-left: 280px;
+  margin-left: 0; /* 사이드바 영향을 받지 않도록 변경 */
+  width: 100%; /* 화면 전체 넓이를 사용하도록 설정 */
   color: #fff;
+  padding: 20px 0; /* 상하 패딩으로 높이 조절, 좌우 패딩은 0 */
+  box-sizing: border-box; /* 패딩이 넓이에 포함되도록 설정 */
 }
 
 footer a {
