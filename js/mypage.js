@@ -1,5 +1,4 @@
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
-const inputName1 = document.getElementById('name1');
 
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
@@ -64,6 +63,7 @@ switchMode.addEventListener('change', function () {
   }
 });
 
+document.querySelector('.info').style.display = 'block';
 let li_elements = document.querySelectorAll('.side-menu li');
 let item_elements = document.querySelectorAll('.item');
 for (let i = 0; i < li_elements.length; i++) {
@@ -79,7 +79,6 @@ for (let i = 0; i < li_elements.length; i++) {
     });
     if (li_value == 'info') {
       document.querySelector('.' + li_value).style.display = 'block';
-      console.log(JSON.parse(localStorage.getItem('userProfile')).userName);
       inputName1.value = JSON.parse(
         localStorage.getItem('userProfile')
       ).userName;

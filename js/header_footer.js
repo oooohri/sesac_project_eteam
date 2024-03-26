@@ -1,61 +1,65 @@
 document.querySelector('header').innerHTML = `<section id="sidebar">
-  <a href="#" class="brand">
+  <a href="../html/main.html" class="brand">
     <i class="bx bxs-coffee"></i>
     <span class="text">카페로</span>
   </a>
   <ul class="side-menu main">
-  <p class="sidebar-title">메뉴</p>
+  
     <li data-li="info" class="active">
       <a href="../html/map.html">
-        <i class="bx bxs-pen"></i>
+        <svg class="bx bxs-map" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+        </svg>
         <span class="text">지도에서 카페찾기 </span>
       </a>
     </li>
-    <li data-li="post">
-      <a href="#">
-        <i class="bx bxs-pen"></i>
-        <span class="text">카페 인터뷰</span>
-      </a>
-    </li>
+
     <li data-li="table-data">
-      <a href="#">
-        <i class="bx bxs-doughnut-chart"></i>
-        <span class="text">Q&A</span>
-      </a>
-    </li>
-  </ul>
-  <ul class="side-menu top">
-  <p class="sidebar-title">마이페이지</p>
-    <li data-li="info" class="active">
       <a href="../html/mypage.html">
-        <i class="bx bxs-user"></i>
-        <span class="text">내 정보 </span>
+      <i class="bx bxs-user"></i>
+        <span class="text">마이페이지</span>
       </a>
     </li>
+
+
+
     <li data-li="post">
-      <a href="#">
-        <i class="bx bxs-pen"></i>
-        <span class="text">카페 등록요청</span>
-      </a>
-    </li>
-    <li data-li="table-data">
-      <a href="#">
-        <i class="bx bxs-doughnut-chart"></i>
-        <span class="text">할 일 목록 </span>
-      </a>
-    </li>
+    <a href="#">
+    <svg class="bx bxs-map" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+      <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+    </svg>
+      <span class="text">카페 인터뷰</span>
+    </a>
+  </li>
+
+  <li data-li="table-data">
+    <a href="#">
+    <svg class="bx bxs-question" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+    </svg>
+      <span class="text">Q&A</span>
+    </a>
+  </li>
+
+  <li data-li="table-data">
+    <a href="../html/make_adv.html">
+    <svg class="bx bxs-adv" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+      <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
+      <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+    </svg>
+      <span class="text">혹시 사장님이세요?</span>
+    </a>
+  </li>
+
   </ul>
+
+  
   <ul class="side-menu">
+
     <li>
-      <a href="#">
-        <i class="bx bxs-cog"></i>
-        <span class="text">내 정보 변경</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="logout">
+      <a href="../html/login.html" class="logout">
         <i class="bx bxs-log-out-circle"></i>
-        <span class="text">로그아웃</span>
+        <span class="text">로그인</span>
       </a>
     </li>
   </ul>
