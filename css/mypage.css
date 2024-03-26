@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: GangwonEdu_OTFBoldA;
-  color: #f07579;
 }
 
 @font-face {
@@ -26,7 +25,7 @@ li {
   --lato: 'Lato', sans-serif;
 
   --light: #f9f9f9;
-  --blue: #3c91e6;
+  --blue: #f07579;
   --light-blue: #cfe8ff;
   --grey: #f5f5dc;
   --dark-grey: #aaaaaa;
