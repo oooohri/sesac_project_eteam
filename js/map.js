@@ -1,6 +1,5 @@
 // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
   mapOption = {
     center: new kakao.maps.LatLng(37.566826, 126.9786567), // 서울시청 좌표
@@ -18,6 +17,7 @@ ps.categorySearch('CE7', placesSearchCB, { useMapBounds: true });
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {
+  localStorage.setItem('cafe_list', JSON.stringify(data));
   if (status === kakao.maps.services.Status.OK) {
     for (var i = 0; i < data.length; i++) {
       displayMarker(data[i]);
@@ -25,6 +25,8 @@ function placesSearchCB(data, status, pagination) {
     }
   }
 }
+
+console.log(JSON.parse(localStorage.getItem('cafe_list')));
 
 // 지도에 마커를 표시하는 함수입니다
 function displayMarker(place) {
