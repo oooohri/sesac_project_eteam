@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>광고 만들기 페이지</title>
+    <link rel="stylesheet" href="./make_adv.css" />
+    <style>
+      /* 광고 미리보기 영역 스타일 */
+      .preview-section {
+        margin-top: 30px;
+        border: 1px solid #ccc;
+        padding: 20px;
+      }
+      .preview-section h2 {
+        margin-bottom: 10px;
+      }
+      .ad-preview {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="creative-section">
+      <div class="goal-section">
+        <h1 class="goal-text">광고 등록 페이지</h1>
+      </div>
+      <h2>광고 등록하기</h2>
+      <textarea
+        class="description"
+        placeholder="광고를 어떻게 구성하시겠어요?"
+      ></textarea>
+      <!-- 이미지 추가 기능 -->
+      <div class="image-upload-section">
+        <label class="image-upload-label right-align"
+          >이미지 추가
+          <input type="file" accept="image/*" multiple style="display: none" />
+        </label>
+      </div>
+      <!-- 광고 미리보기 영역 -->
+      <div class="preview-section">
+        <h2>광고 미리보기</h2>
+        <img src="#" alt="광고 미리보기" class="ad-preview" />
+      </div>
+      <!-- 종료일 선택 옵션 -->
+      <div class="container"></div>
+      <!-- 이하 생략 -->
+    </div>
+    <script>
+      // 이미지 미리보기 기능 추가
+      const imageInput = document.querySelector('input[type="file"]');
+      const adPreview = document.querySelector('.ad-preview');
+
+      imageInput.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            adPreview.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    </script>
+  </body>
+</html>

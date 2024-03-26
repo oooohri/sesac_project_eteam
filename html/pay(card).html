@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>결제 정보 추가</title>
+    <link rel="stylesheet" href="../css/pay.css" />
+    <style>
+      /* 추가적인 스타일은 pay.css 파일에 있어서 별도로 기술하지 않습니다. */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>결제 정보 추가</h1>
+      <div class="section">
+        <label for="name">이름:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="카드에 표시 된 이름"
+        />
+      </div>
+      <div class="section">
+        <label for="card-number">카드 번호:</label>
+        <input
+          type="text"
+          id="card-number"
+          name="card-number"
+          placeholder="카드 번호를 입력해주세요"
+        />
+      </div>
+      <div class="oneline">
+        <div class="carddate">
+          <label for="expiration-date">유효 기간 (MM/YY):</label>
+          <input
+            type="text"
+            id="expiration-date"
+            name="expiration-date"
+            placeholder="MM/YY"
+          />
+        </div>
+        <div class="cardcvv">
+          <label for="cvv">CVV:</label>
+          <input type="text" id="cvv" name="cvv" placeholder="CVV" />
+        </div>
+      </div>
+      <button
+        class="button"
+        style="background-color: #f07579"
+        onclick="validatePayment()"
+      >
+        결제하기
+      </button>
+    </div>
+
+    <script>
+      function validatePayment() {
+        var cardNumber = document.getElementById('card-number').value;
+        var cvv = document.getElementById('cvv').value;
+
+        // 카드 번호가 16자리가 아니거나 숫자가 아닌 경우
+        if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+          alert('카드 번호를 확인해주세요.');
+          return;
+        }
+
+        // CVV가 3자리가 아니거나 숫자가 아닌 경우
+        if (cvv.length !== 3 || isNaN(cvv)) {
+          alert('CVV를 확인해주세요.');
+          return;
+        }
+
+        alert('결제가 완료되었습니다.');
+      }
+    </script>
+  </body>
+</html>
