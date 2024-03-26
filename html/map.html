@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,3 +17,40 @@
     <script defer type="module" src="../js/map.js"></script>
   </body>
 </html>
+=======
+ <!-- 이미지 추가 기능 -->
+      <div class="image-upload-section">
+        <label class="image-upload-label right-align">
+          이미지 추가
+          <input type="file" accept="image/*" multiple style="display: none" />
+        </label>
+      </div>
+      <!-- 광고 미리보기 영역 -->
+      <div class="preview-section">
+        <h2>광고 사진 미리보기</h2>
+        <img src="#" alt="광고 사진 미리보기" class="ad-preview" />
+        <script>
+          // 이미지 미리보기 기능 추가
+          const imageInput = document.querySelector('input[type="file"]');
+          const adPreview = document.querySelector('.ad-preview');
+          const adDescription = document.querySelector('.description');
+
+          imageInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                adPreview.src = e.target.result;
+                adPreview.alt = adDescription.value; // 광고 설명과 동일한 alt 속성 설정
+              };
+              reader.readAsDataURL(file);
+            }
+          });
+
+          // 광고 설명 입력 시 미리보기 alt 속성 업데이트
+          adDescription.addEventListener('input', function () {
+            adPreview.alt = adDescription.value;
+          });
+        </script>
+      </div>
+>>>>>>> 622e60b259d415197d2a14182fef937b2273ea79
