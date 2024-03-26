@@ -351,9 +351,12 @@ body {
   position: relative;
   right: 50%;
   margin: 10px;
-  padding-inline: 10px;
+  margin-inline: 10px;
 }
-
+.inputField {
+  width: 400px;
+  height: 200px;
+}
 #content main .box-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
