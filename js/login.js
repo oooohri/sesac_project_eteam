@@ -40,7 +40,7 @@ function myFunction() {
       console.error('Error ', error);
     });
 
-  if (id === 'zaya' && password === '123') {
+  if (id === 'admin' && password === '123') {
     Swal.fire({
       title: '로그인 되었습니다!',
       icon: 'success',

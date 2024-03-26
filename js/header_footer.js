@@ -1,6 +1,6 @@
 document.querySelector('header').innerHTML = `<section id="sidebar">
 <a href="#" class="brand">
-  <i class="bx bxs-coffee"></i>
+  <i class="bx bxs-coffee"></i>w
   <span class="text">카페로</span>
 </a>
 <ul class="side-menu top">
@@ -24,7 +24,7 @@ document.querySelector('header').innerHTML = `<section id="sidebar">
   </li>
 </ul>
 <ul class="side-menu">
-  <li>
+  <li data-li="fix">
     <a href="#">
       <i class="bx bxs-cog"></i>
       <span class="text">내 정보 변경</span>
@@ -58,7 +58,7 @@ document.querySelector('header').innerHTML = `<section id="sidebar">
     <span class="num">8</span>
   </a>
   <a href="#" class="profile">
-    <img src="img/people.png" />
+    <img src="/img/people.png" />
   </a>
 </nav>
 </section>`;
@@ -163,3 +163,34 @@ switchMode.addEventListener('change', function () {
     document.body.classList.remove('dark');
   }
 });
+
+document.querySelector('.info').style.display = 'block';
+let li_elements = document.querySelectorAll('.side-menu li');
+let item_elements = document.querySelectorAll('.item');
+for (let i = 0; i < li_elements.length; i++) {
+  li_elements[i].addEventListener('click', function () {
+    li_elements.forEach(function (li) {
+      li.classList.remove('active');
+    });
+    this.classList.add('active');
+    let li_value = this.getAttribute('data-li');
+    item_elements.forEach(function (item) {
+      item.style.display = 'none';
+      console.log(li_value);
+    });
+    if (li_value == 'info') {
+      document.querySelector('.' + li_value).style.display = 'block';
+      inputName1.value = JSON.parse(
+        localStorage.getItem('userProfile')
+      ).userName;
+    } else if (li_value == 'post') {
+      document.querySelector('.' + li_value).style.display = 'block';
+    } else if (li_value == 'table-data') {
+      document.querySelector('.' + li_value).style.display = 'block';
+    } else if (li_value == 'fix') {
+      document.querySelector('.' + li_value).style.display = 'block';
+    } else {
+      console.log('boli');
+    }
+  });
+}
