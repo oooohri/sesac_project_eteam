@@ -90,7 +90,7 @@ input {
 }
 
 .main-search-input .search-btn img {
-  padding: 20px;
+  padding: 9px;
 }
 
 img {
@@ -107,12 +107,12 @@ A:link {
   background: inherit;
 }
 
-.text-white {
-  color: #fefefe;
+input:focus {
+  outline: none;
 }
 
 .bg-sub {
-  background-color: #f07579;
+  background-color: #d45155;
 }
 
 .button {
