@@ -168,15 +168,8 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  /* float: center; */
-
-  position: sticky;
-  top: 70%;
-
-  position: absolute;
-  top: 100%;
-
-  left: 35%;
+  width: 100%;
+  font-size: 18px;
 }
 
 .account-center {
