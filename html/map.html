@@ -4,11 +4,32 @@
     <meta charset="utf-8" />
     <title>지도</title>
     <!— css —>
-    <link rel="stylesheet" href="../css/map" />
+    <link rel="stylesheet" href="../css/map.css" />
   </head>
   <body>
+    <div class="map-nav-left">
+      <div class="map-header">
+        <div class="map-title shadow border-radius-right bg-primary">
+          <a href="../html/main.html">
+            <div class="back" onclick="whereback();">
+              <img src="../img/뒤로가기.png" alt="뒤로가기" /></div
+          ></a>
+          <div class="title">
+            <a href="../html/main.html" style="text-decoration: none"
+              >메인으로 가기</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="map"></div>
 
+    <div class="map-footer here-map re-search-btn" style="display: block">
+      <div class="wrapper shadow">
+        <div class="text">여기에서 다시 카페 찾기</div>
+      </div>
+    </div>
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=94fb1b8b0801c867c40b942254fd6163&libraries=services"
