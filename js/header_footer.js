@@ -152,6 +152,12 @@ const sidebar = document.getElementById('sidebar');
 
 menuBar.addEventListener('click', function () {
   sidebar.classList.toggle('hide');
+
+  if (sidebar.classList.value !== '') {
+    document.querySelector('main').style.marginLeft = '56px';
+  } else {
+    document.querySelector('main').style.marginLeft = '280px';
+  }
 });
 
 const searchButton = document.querySelector(
