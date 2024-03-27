@@ -168,7 +168,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  float: center;
+  /* float: center; */
 
   position: sticky;
   top: 70%;
