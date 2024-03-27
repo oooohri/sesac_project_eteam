@@ -15,7 +15,9 @@
 a {
   text-decoration: none;
 }
-
+body {
+  cursor: url('/img/2x/자산\ 14@2x.png');
+}
 li {
   list-style: none;
 }
@@ -980,4 +982,7 @@ select {
 }
 .btnRequest:hover {
   color: #f07579;
+}
+#container1 {
+  height: 1000px;
 }
