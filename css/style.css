@@ -166,7 +166,7 @@ body {
   color: var(--blue);
 }
 #sidebar .side-menu li a .bx {
-  min-width: calc(60px - ((4px + 6px) * 2));
+  min-width: 10px;
   display: flex;
   justify-content: center;
 }
@@ -188,7 +188,7 @@ body {
 #content nav {
   height: 56px;
   background: var(--light);
-  padding: 0px 90px 0px 10px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   grid-gap: 24px;
@@ -224,9 +224,20 @@ body {
 }
 #content nav form {
   max-width: 400px;
-  width: 100%;
-  margin-right: auto;
 }
+
+.header-input-btn {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch-btn-box {
+  position: fixed;
+  right: 30px;
+}
+
 #content nav form .form-input {
   display: flex;
   align-items: center;
@@ -234,13 +245,12 @@ body {
 }
 #content nav form .form-input input {
   flex-grow: 1;
-  padding: 0 16px;
+  padding: 0 30px;
   height: 100%;
   border: none;
   background: var(--grey);
   border-radius: 36px 0 0 36px;
   outline: none;
-  width: 100%;
   color: var(--dark);
 }
 #content nav form .form-input button {
@@ -321,7 +331,6 @@ footer {
 
 .footer-container {
   width: 60%;
-  max-width: 1000px;
   padding: 30px 30px 0 30px;
   text-align: center;
   font-size: 15px;
@@ -356,4 +365,18 @@ footer .axo.bkw img {
 footer .col-4 {
   display: flex;
   justify-content: space-evenly;
+}
+
+/* 위로 가기 btn */
+.b_top {
+  position: fixed;
+  z-index: 1001;
+  background-color: #ce3536;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  text-align: center;
+  height: 40px;
+  border-radius: 20px;
+  opacity: 70%;
 }
