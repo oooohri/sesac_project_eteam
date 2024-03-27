@@ -399,3 +399,73 @@ contents__box-info > .info-cafe {
   background-color: #aaaaaa;
   height: auto;
 }
+
+/* 인터뷰 섹션 반응형 */
+
+@media (max-width: 1000px) {
+  .cafe_img_hidden {
+    display: none;
+  }
+}
+@media (max-width: 1300px) {
+  .news_events__left__direct {
+    display: none;
+  }
+}
+
+@media (max-width: 1300px) {
+  .cafe-interview-left {
+    padding: 50px 30px;
+  }
+}
+@media (max-width: 1300px) {
+  .cafe-interview-left {
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(111, 112, 112, 0.3);
+  }
+}
+
+@media (max-width: 1300px) {
+  .cafe-interview-right > .right-contents__box {
+    border-left: none;
+    border-right: none;
+    padding: 40px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .cafe-interview > .inner {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1300px) {
+  .cafe-interview-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .cafe-interview-left-header {
+    position: unset;
+    transform: translate(0);
+  }
+}
+
+@media (max-width: 1300px) {
+  .cafe-interview-left-header {
+    left: 0;
+  }
+}
+
+@media (max-width: 1300px) {
+  .cafe-interview-left-header {
+    font-size: 50px;
+    line-height: 50px;
+    width: auto;
+    height: auto;
+  }
+}
