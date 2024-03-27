@@ -66,9 +66,10 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
 }
-#sidebar::--webkit-scrollbar {
+/* #sidebar::--webkit-scrollbar {
   display: none;
-}
+} */
+
 #sidebar.hide {
   width: 60px;
 }
@@ -355,10 +356,13 @@ body {
 }
 .inputField {
   width: 800px;
-  line-height: 6px;
 }
 .emaildate {
   padding: 10px 0px 10px 0px;
+}
+h2 {
+  padding: 15px;
+  color: #f07579;
 }
 #content main .box-info {
   display: grid;
@@ -405,7 +409,7 @@ body {
 }
 
 #content main .table-data {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   grid-gap: 24px;
   margin-top: 24px;
@@ -536,6 +540,8 @@ td button i {
   /* justify-content: space-between; */
   align-items: flex-start;
   padding: 0;
+  background: #fff;
+  border-radius: 30px;
 }
 
 .modal-body form .imgholder {
@@ -634,7 +640,7 @@ form .inputField > div input {
 }
 
 .modal-footer .submit {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #readData form .inputField > div input {
@@ -656,7 +662,7 @@ form .inputField > div input {
     display: none;
   }
 }
-/* 
+
 @media screen and (max-width: 576px) {
   #content nav form .form-input input {
     display: none;
@@ -700,11 +706,11 @@ form .inputField > div input {
   #content main .table-data .todo .todo-list {
     min-width: 420px;
   }
-} */
+}
 
 .btn {
-  width: 150px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
   border-radius: 10%;
 }
 .btn:hover {
@@ -966,9 +972,11 @@ select {
   color: #777;
 }
 .btnRequest {
-  width: 150px;
-  height: 50px;
-  border-radius: 10%;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  float: right;
 }
 .btnRequest:hover {
   color: #f07579;
