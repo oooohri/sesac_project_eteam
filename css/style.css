@@ -344,9 +344,7 @@ footer {
 main {
   margin-top: 56px;
   margin-left: 280px;
-  /* margin-left: 280px; -> 햄버거 버튼 클릭 이벤트로 nav바 보일 때*/
-  /* margin-left: 60px; -> 햄버거버튼 클릭 시 nav바 닫혔을 때 */
-  /* 모바일 브레이크 포인트 정해서 모바일 너비일 경우 nav 바 화면 전체를 체울 수 있도록 미디어쿼리 */
+  transition: 0.3s ease;
   min-height: calc(100vh - 56px - 265px);
 }
 
