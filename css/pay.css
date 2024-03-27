@@ -19,6 +19,7 @@ body {
   background-color: #f2f2f2;
   margin: 0;
   padding: 0;
+  cursor: url('/sesac_project_eteam/img/2x/커서이미지.png');
 }
 .container {
   max-width: 600px;

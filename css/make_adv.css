@@ -8,7 +8,9 @@ button
   border: 1px solid #ccc;
   padding: 20px;
 }
-
+body {
+  cursor: url('/sesac_project_eteam/img/2x/커서이미지.png');
+}
 .preview-section h2 {
   margin-bottom: 10px;
 }
@@ -63,6 +65,8 @@ body {
 .creative-section {
   background-color: #ffffff;
   padding: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   /* position: fixed; */
 
   align-items: center;
@@ -121,6 +125,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
 }
 
 .date-button {
@@ -162,8 +169,13 @@ body {
   border-radius: 5px;
   cursor: pointer;
   float: center;
+
+  position: sticky;
+  top: 70%;
+
   position: absolute;
   top: 100%;
+
   left: 35%;
 }
 
@@ -209,7 +221,7 @@ body {
 }
 .date-selector {
   height: 40px;
-  width: 100%;
+  width: 650px;
   display: flex;
   align-items: center;
   border: 2px solid rgb(52, 51, 51);
@@ -219,8 +231,7 @@ body {
 }
 .end-date-picker {
   height: 40px;
-  width: 100%;
-  display: flex;
+  width: 650px;
   align-items: center;
   border: 2px solid rgb(52, 51, 51);
   padding: 15px;
@@ -296,3 +307,22 @@ button:active {
   display: block;
 }
 /* 원화 바꾸기 끝 */
+
+.increment {
+  border-radius: 7px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decrement {
+  border-radius: 7px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#end-days {
+  border-radius: 10px;
+}

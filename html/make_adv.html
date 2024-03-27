@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>광고 만들기 페이지</title>
+    <link rel="stylesheet" href="/sesac_project_eteam/css/mouse_cursor.css" />
     <link rel="stylesheet" href="../css/make_adv.css" />
-    <link rel="stylesheet" href="../css/res.css" />
+    <!-- <link rel="stylesheet" href="../css/res.css" /> -->
     <!-- 헤더푸터 -->
+    <script defer src="/sesac_project_eteam/js/mouse_cursor.js"></script>
     <script
       src="https://kit.fontawesome.com/35c503f1b7.js"
       crossorigin="anonymous"
@@ -30,6 +32,7 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
+    <div id="cursor" style="top: 1060px; left: 996px"></div>
     <header></header>
     <main>
       <div class="creative-section">
@@ -61,17 +64,25 @@
         <br />
         <!-- 종료일 선택 옵션 -->
         <div class="end-options">
-          <label for="end-date"><h2>종료 기간을 선택해주세요.</h2></label>
-          <div class="date-picker">
-            <div class="date-selector">
-              <label for="end-days" class="label">종료일 설정</label>
-              <div class="controls">
-                <button class="decrement">-</button>
-                <input type="text" id="end-days" value="6" class="days" />
-                <button class="increment">+</button>
+          <div>
+            <label for="end-date"><h2>종료 기간을 선택해주세요.</h2></label>
+            <div class="date-picker">
+              <div class="date-selector">
+                <label for="end-days" class="label">종료일 설정</label>
+                <div class="controls">
+                  <button class="decrement">-</button>
+                  <input type="text" id="end-days" value="6" class="days" />
+                  <button class="increment">+</button>
+                </div>
+              </div>
+              <div>
+                <input
+                  type="date"
+                  class="end-date-picker"
+                  placeholder="날짜 선택"
+                />
               </div>
             </div>
-            <input type="date" class="end-date-picker" />
           </div>
         </div>
 
@@ -154,6 +165,39 @@
     const budgetRange = document.getElementById('budget');
     const budgetDisplay = document.getElementById('budget-display');
 
+
+        endDaysInput.addEventListener('input', function () {
+          if (parseInt(endDaysInput.value) < 0) {
+            endDaysInput.value = 0;
+          }
+        });
+        function myFunction() {
+          window.location.assign('./pay(card).html');
+        }
+
+        document
+          .getElementById('budget')
+          .addEventListener('input', function () {
+            const sliderValue = parseInt(this.value); // 슬라이더의 값 가져오기
+            console.log(sliderValue);
+            const budgetDisplay = document.getElementById('budget-display');
+            const priceValue = document.querySelector('.price-value');
+
+            // '$' 또는 '￦' 문자를 제외한 숫자 부분만 추출
+            const priceValueNumber = parseInt(
+              priceValue.textContent.replace(/[^0-9]/g, '')
+            );
+
+            // 슬라이더의 값이 변할 때마다 표시되는 숫자 업데이트
+            const updatedPriceValue = priceValueNumber + sliderValue - 2000;
+            budgetDisplay.textContent = '￦' + sliderValue.toLocaleString();
+            priceValue.textContent = '￦' + updatedPriceValue.toLocaleString();
+          });
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+
     budgetRange.addEventListener('input', function () {
       const budgetAmount = parseInt(budgetRange.value);
       budgetDisplay.textContent = '$' + budgetAmount.toLocaleString();
@@ -187,4 +231,5 @@
       window.location.assign('./pay(card).html');
     }
   </script>
+
 </html>
