@@ -65,6 +65,8 @@ body {
 .creative-section {
   background-color: #ffffff;
   padding: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   /* position: fixed; */
 
   align-items: center;
