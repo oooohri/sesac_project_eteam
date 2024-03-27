@@ -1,0 +1,15 @@
+/* 커서 */
+#cursor {
+  position: absolute;
+  z-index: 9999999999999999;
+  transform: translate(10%, 10%);
+
+  background-image: url(../img/2x/커서이미지.png);
+
+  background-image: url(/img/2x/자산\ 14@2x.png);
+
+  background-size: contain;
+  width: 45px;
+  height: 45px;
+  pointer-events: none;
+}

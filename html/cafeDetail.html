@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>카페 상세정보</title>
+    <link defer rel="stylesheet" href="/css/cafeDetail.css" />
+    <!-- 부트스트랩 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 헤더푸터 -->
+    <script
+      src="https://kit.fontawesome.com/35c503f1b7.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    /> -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script> -->
+    <script
+      src="https://kit.fontawesome.com/35c503f1b7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="/js/header_footer.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body style="background-color: beige">
+    <!-- ! 헤더 -->
+    <header></header>
+
+    <!-- ! 메인  -->
+    <main>
+      <section>
+        <div class="horizontal-layout">
+          <!-- 사진 -->
+          <article class="picture">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="../img/cafePic.jpeg" alt="Image 1" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="../img/cafePic2.png" alt="Image 2" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="../img/cafePic3.jpeg" alt="Image 2" />
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </article>
+
+          <!-- ? 카페 기본 정보 -->
+          <article class="basic_information">
+            <!-- 카페 텍스트 정보 -->
+            <div class="basic_cafe_infor_text">
+              <div id="cafeName">
+                카페이름
+                <!-- <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-suit-heart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"
+                  />
+                </svg> -->
+              </div>
+              <div id="cafeAdress">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-signpost-split"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7zm1 3V8H2l-.75 1L2 10zm0-5h6l.75-1L14 3H8z"
+                  /></svg
+                >주소
+              </div>
+              <div id="cafePhone">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-telephone"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                  /></svg
+                >전화번호
+              </div>
+              <span id="cafeTime">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-dot"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" /></svg
+                >영업중
+              </span>
+              <span id="cafeTime2">22:30에 영업종료</span>
+            </div>
+
+            <!-- 카페 한눈에보기(그래프) -->
+            <div class="my-chart">
+              <canvas id="myChart"></canvas>
+            </div>
+            <!-- <div class="graphWrap"> -->
+            <!-- 그래프 막대기 -->
+            <!-- <div class="graph">
+                <div id="item1" class="p-100"></div>
+                <div id="item2" class="p-50"></div>
+                <div id="item3" class="p-100"></div>
+                <div id="item4" class="p-100"></div>
+                <div id="item5" class="p-100"></div>
+              </div> -->
+            <!-- 그래프 텍스트 -->
+            <!-- <div class="grapText">
+                <div>콘센트</div>
+                <div>카페공간</div>
+                <div>음악</div>
+                <div>카공 분위기</div>
+                <div>직원 친절</div>
+              </div> -->
+            <!-- </div> -->
+          </article>
+        </div>
+      </section>
+
+      <!-- ? 리뷰 작성 -->
+      <section>
+        <article>
+          <!-- 부트스트랩 아코디언 기능 -->
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <!-- 헤더(제목) -->
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  리뷰 작성하기
+                </button>
+              </h2>
+              <!-- 접기/펼치기 작동 -->
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#accordionExample"
+              >
+                <!-- 작성 내용 -->
+                <span style="color: pink"
+                  >☺︎ 해쉬태그 클릭과 별점선택 후 리뷰를 써주세요.</span
+                >
+                <form id="reviewForm" class="review-form">
+                  <!-- 콘센트 -->
+                  <div class="review-list" id="reviewSet1">
+                    <div class="check-box">
+                      <input
+                        type="checkbox"
+                        class="tag concent-write"
+                        id="concent"
+                        value="#콘센트"
+                      />
+                      <label for="concent">#콘센트</label>
+                    </div>
+                    <!-- 별점 -->
+                    <div class="star-rating">
+                      <input type="radio" class="star" value="1" />
+                      <input type="radio" class="star" value="2" />
+                      <input type="radio" class="star" value="3" />
+                      <input type="radio" class="star" value="4" />
+                      <input type="radio" class="star" value="5" />
+                    </div>
+                    <!-- 리뷰 내용작성 -->
+                    <div class="form-group-content">
+                      <textarea
+                        class="form-control"
+                        id="addContent"
+                        rows="3"
+                        placeholder="내용을 입력하세요"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <!-- 카페공간 -->
+                  <div class="review-list">
+                    <div class="check-box" id="reviewSet2">
+                      <input
+                        type="checkbox"
+                        class="tag cafeSpace-write"
+                        id="cafeSpace"
+                        value="#카페 공간"
+                      />
+                      <label for="cafeSpace">#카페 공간</label>
+                    </div>
+                    <!-- 별점 -->
+                    <div class="star-rating">
+                      <input type="radio" class="star" value="1" />
+                      <input type="radio" class="star" value="2" />
+                      <input type="radio" class="star" value="3" />
+                      <input type="radio" class="star" value="4" />
+                      <input type="radio" class="star" value="5" />
+                    </div>
+                    <!-- 리뷰 내용작성 -->
+                    <div class="form-group-content">
+                      <textarea
+                        class="form-control"
+                        id="addContent"
+                        rows="3"
+                        placeholder="내용을 입력하세요"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <!-- 음악 -->
+                  <div class="review-list" id="reviewSet3">
+                    <div class="check-box">
+                      <input
+                        type="checkbox"
+                        class="tag music-write"
+                        id="music"
+                        value="#음악"
+                      />
+                      <label for="music">#음악</label>
+                    </div>
+                    <!-- 별점 -->
+                    <div class="star-rating">
+                      <input type="radio" class="star" value="1" />
+                      <input type="radio" class="star" value="2" />
+                      <input type="radio" class="star" value="3" />
+                      <input type="radio" class="star" value="4" />
+                      <input type="radio" class="star" value="5" />
+                    </div>
+                    <!-- 리뷰 내용작성 -->
+                    <div class="form-group-content">
+                      <textarea
+                        class="form-control"
+                        id="addContent"
+                        rows="3"
+                        placeholder="내용을 입력하세요"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <!-- 카공 분위기 -->
+                  <div class="review-list" id="reviewSet4">
+                    <div class="check-box">
+                      <input
+                        type="checkbox"
+                        class="tag mood-write"
+                        id="mood"
+                        value="#카공 분위기"
+                      />
+                      <label for="mood">#카공 분위기</label>
+                    </div>
+                    <!-- 별점 -->
+                    <div class="star-rating">
+                      <input type="radio" class="star" value="1" />
+                      <input type="radio" class="star" value="2" />
+                      <input type="radio" class="star" value="3" />
+                      <input type="radio" class="star" value="4" />
+                      <input type="radio" class="star" value="5" />
+                    </div>
+                    <!-- 리뷰 내용작성 -->
+                    <div class="form-group-content">
+                      <textarea
+                        class="form-control"
+                        id="addContent"
+                        rows="3"
+                        placeholder="내용을 입력하세요"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <!-- 직원 친절 -->
+                  <div class="review-list" id="reviewSet5">
+                    <div class="check-box">
+                      <input
+                        type="checkbox"
+                        class="tag employee-write"
+                        id="employee"
+                        value="#직원 친절"
+                      />
+                      <label for="employee">#직원 친절</label>
+                    </div>
+                    <!-- 별점 -->
+                    <div class="star-rating">
+                      <input type="radio" class="star" value="1" />
+                      <input type="radio" class="star" value="2" />
+                      <input type="radio" class="star" value="3" />
+                      <input type="radio" class="star" value="4" />
+                      <input type="radio" class="star" value="5" />
+                    </div>
+                    <!-- 리뷰 내용작성 -->
+                    <div class="form-group-content">
+                      <textarea
+                        class="form-control"
+                        id="addContent"
+                        rows="3"
+                        placeholder="내용을 입력하세요"
+                      ></textarea>
+                    </div>
+                  </div>
+                </form>
+                <button type="submit" id="btn_write">작성하기</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ? 리뷰 상세 -->
+      <section class="review_detail">
+        <article>
+          <!-- 필터링(최신순,별점순...) -->
+          <div class="filter-options">
+            <select>
+              <option value="new">최신순</option>
+              <option value="highRating">별점 높은순</option>
+              <option value="lowRating">별점 낮은순</option>
+            </select>
+          </div>
+        </article>
+        <hr />
+
+        <!-- 리뷰 상세 태그 -->
+        <article class="review_detail_tag">
+          <div class="tag-group">
+            <button type="button" class="tag concent" id="concent_detail">
+              #콘센트
+            </button>
+            <button type="button" class="tag cafeSpace" id="cafeSpace_detail">
+              #카페 공간
+            </button>
+            <button type="button" class="tag music" id="music_detail">
+              #음악
+            </button>
+            <button type="button" class="tag mood" id="mood_detail">
+              #카공 분위기
+            </button>
+            <button type="button" class="tag employee" id="employee_detail">
+              #직원 친절
+            </button>
+          </div>
+          <section class="show-review"></section>
+        </article>
+        <hr />
+
+        <!-- <button class="btn-moreAll">더보기</button> -->
+      </section>
+    </main>
+
+    <!-- <div id="map"></div> -->
+
+    <!-- ! 푸터 -->
+    <footer></footer>
+
+    <!-- 스크립트 -->
+
+    <script defer src="../js/cafeDetail.js"></script>
+    <script>
+      console.log(document.querySelector('.accordion-button'));
+
+      document
+        .querySelector('.accordion-button')
+        .addEventListener('click', (event) => {
+          event.target
+            .closest('.accordion-header')
+            .nextElementSibling.classList.toggle('test');
+          document
+            .querySelector('.accordion-button')
+            .classList.toggle('is-active');
+        });
+
+      var swiper = new Swiper('.mySwiper', {
+        cssMode: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+
+      const ctx = document.getElementById('myChart');
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: [
+            '#콘센트',
+            '#카페 공간',
+            '#음악',
+            '#카공 분위기',
+            '#직원 친절',
+          ],
+          datasets: [
+            {
+              label: '# of Votes',
+              data: [2, 0, 2, 3, 5],
+              borderWidth: 1,
+              borderColor: 'beige',
+              backgroundColor: 'beige',
+              borderRadius: 50,
+              barPercentage: 0.5,
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                stepSize: 1,
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
