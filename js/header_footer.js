@@ -1,5 +1,5 @@
 document.querySelector('header').innerHTML = `<section id="sidebar">
-  <a href="/sesac_project_eteam/html/index.html" class="brand img-container">
+  <a href="/sesac_project_eteam/" class="brand img-container">
     <img src="/sesac_project_eteam/img/카페로_로고.png" alt="카페로_로고" />
   </a>
   <ul class="side-menu main">
