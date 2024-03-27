@@ -74,6 +74,9 @@ body {
 #sidebar.hide {
   width: 60px;
 }
+#sidebar a:hover {
+  text-decoration: none;
+}
 #sidebar .brand {
   font-size: 24px;
   font-weight: 700;
