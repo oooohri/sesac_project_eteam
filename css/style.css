@@ -330,9 +330,14 @@ footer {
 main {
   margin-top: 56px;
   margin-left: 280px;
+  /* margin-left: 280px; -> 햄버거 버튼 클릭 이벤트로 nav바 보일 때*/
+  /* margin-left: 60px; -> 햄버거버튼 클릭 시 nav바 닫혔을 때 */
+  /* 모바일 브레이크 포인트 정해서 모바일 너비일 경우 nav 바 화면 전체를 체울 수 있도록 미디어쿼리 */
+  min-height: calc(100vh - 56px - 265px);
 }
 
 footer {
+  height: 265px;
   margin-left: 0; /* 사이드바 영향을 받지 않도록 변경 */
   width: 100%; /* 화면 전체 넓이를 사용하도록 설정 */
   color: #fff;
@@ -352,4 +357,14 @@ footer .axo.bkw img {
 footer .col-4 {
   display: flex;
   justify-content: space-evenly;
+}
+/* x버튼 기본적으로 display: none;
+position: 
+*/
+
+@media (max-width: 700px) {
+  #sidebar {
+    width: 100vw;
+  }
+  /* x버튼 하나 만들어서 여기서 display: block */
 }
