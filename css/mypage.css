@@ -1,11 +1,10 @@
 * {
   margin: 0;
-
+  padding: 0;
   box-sizing: border-box;
   font-family: GangwonEdu_OTFBoldA;
-
-  color: #f07579;
 }
+
 @font-face {
   font-family: 'GangwonEdu_OTFBoldA';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
@@ -16,7 +15,9 @@
 a {
   text-decoration: none;
 }
-
+body {
+  cursor: url('/img/2x/자산\ 14@2x.png');
+}
 li {
   list-style: none;
 }
@@ -24,8 +25,9 @@ li {
 :root {
   --poppins: 'Poppins', sans-serif;
   --lato: 'Lato', sans-serif;
+
   --light: #f9f9f9;
-  --blue: #3c91e6;
+  --blue: #f07579;
   --light-blue: #cfe8ff;
   --grey: #f5f5dc;
   --dark-grey: #aaaaaa;
@@ -61,14 +63,15 @@ body {
   height: 100%;
   background: var(--light);
   z-index: 2000;
-
+  font-family: var(--lato);
   transition: 0.3s ease;
   overflow-x: hidden;
   scrollbar-width: none;
 }
-#sidebar::--webkit-scrollbar {
+/* #sidebar::--webkit-scrollbar {
   display: none;
-}
+} */
+
 #sidebar.hide {
   width: 60px;
 }
@@ -162,12 +165,6 @@ body {
 /* SIDEBAR */
 
 /* CONTENT */
-.inputcontainer {
-  padding: 0;
-  width: 800px;
-  position: fixed;
-  margin-left: 20%;
-}
 #content {
   position: relative;
   width: calc(100% - 280px);
@@ -187,7 +184,7 @@ body {
   display: flex;
   align-items: center;
   grid-gap: 24px;
-
+  font-family: var(--lato);
   position: sticky;
   top: 0;
   left: 0;
@@ -304,19 +301,31 @@ body {
 /* NAVBAR */
 
 /* MAIN */
-#fade {
-  height: 400px;
-  width: 400px;
-  background: white;
-}
 #content main {
   width: 100%;
   padding: 36px 24px;
-
+  font-family: var(--poppins);
   max-height: calc(100vh - 56px);
   overflow-y: auto;
 }
-
+#content main .head-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-gap: 16px;
+  flex-wrap: wrap;
+}
+#content main .head-title .left h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+#content main .head-title .left .breadcrumb {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+}
 #content main .head-title .left .breadcrumb li {
   color: var(--dark);
 }
@@ -340,7 +349,75 @@ body {
   grid-gap: 10px;
   font-weight: 500;
 }
+.inputcontainer {
+  position: relative;
+  /* right: 50%; */
+  margin: 10px;
+  margin-inline: 10px;
+  justify-content: space-between;
+}
+.inputField {
+  width: 800px;
+}
+.emaildate {
+  padding: 10px 0px 10px 0px;
+}
+h2 {
+  padding: 15px;
+  color: #f07579;
+}
+#content main .box-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 24px;
+  margin-top: 36px;
+}
+#content main .box-info li {
+  padding: 24px;
+  background: var(--light);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  grid-gap: 24px;
+}
+#content main .box-info li .bx {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#content main .box-info li:nth-child(1) .bx {
+  background: var(--light-blue);
+  color: var(--blue);
+}
+#content main .box-info li:nth-child(2) .bx {
+  background: var(--light-yellow);
+  color: var(--yellow);
+}
+#content main .box-info li:nth-child(3) .bx {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+#content main .box-info li .text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark);
+}
+#content main .box-info li .text p {
+  color: var(--dark);
+}
 
+#content main .table-data {
+  display: none;
+  flex-wrap: wrap;
+  grid-gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+  color: var(--dark);
+}
 #content main .table-data > div {
   border-radius: 20px;
   background: var(--light);
@@ -362,6 +439,62 @@ body {
   cursor: pointer;
 }
 
+#content main .table-data .order {
+  flex-grow: 1;
+  flex-basis: 500px;
+}
+#content main .table-data .order table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#content main .table-data .order table th {
+  padding-bottom: 12px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--grey);
+}
+#content main .table-data .order table td {
+  padding: 16px 0;
+}
+#content main .table-data .order table tr td:first-child {
+  display: flex;
+  align-items: center;
+  grid-gap: 12px;
+  padding-left: 6px;
+}
+#content main .table-data .order table td img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#content main .table-data .order table tbody tr:hover {
+  background: var(--grey);
+}
+#content main .table-data .order table tr td .status {
+  font-size: 10px;
+  padding: 6px 16px;
+  color: var(--light);
+  border-radius: 20px;
+  font-weight: 700;
+}
+#content main .table-data .order table tr td .status.completed {
+  background: var(--blue);
+}
+#content main .table-data .order table tr td .status.process {
+  background: var(--yellow);
+}
+#content main .table-data .order table tr td .status.pending {
+  background: var(--orange);
+}
+
+#content main .table-data .todo {
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+#content main .table-data .todo .todo-list {
+  width: 100%;
+}
 #content main .table-data .todo .todo-list li {
   width: 100%;
   margin-bottom: 16px;
@@ -384,8 +517,10 @@ body {
 #content main .table-data .todo .todo-list li:last-child {
   margin-bottom: 0;
 }
+
 /* MAIN */
 /* CONTENT */
+
 table tr td {
   vertical-align: middle;
 }
@@ -400,14 +535,15 @@ td button i {
 
 .modal-header {
   background: #0d6efd;
-  color: #fff;
 }
 
 .modal-body form {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: flex-start;
   padding: 0;
+  background: #fff;
+  border-radius: 30px;
 }
 
 .modal-body form .imgholder {
@@ -466,12 +602,18 @@ tr {
 }
 
 .modal-body form .inputField {
-  flex-basis: 70%;
+  flex-basis: 100%;
   padding-left: 100px;
-  left: 40%;
+  left: 10%;
   top: 11%;
 }
 .fix {
+  display: none;
+}
+.table-data {
+  display: none;
+}
+.post {
   display: none;
 }
 form .inputField > div {
@@ -487,7 +629,6 @@ form .inputField > div {
 #userForm form .inputField > div label::after {
   content: '*';
   color: red;
-  background: white;
 }
 
 form .inputField > div input {
@@ -498,12 +639,10 @@ form .inputField > div input {
   background: transparent;
   border-bottom: 2px solid rgb(235, 83, 184);
   font-size: 20px;
-  line-height: 10px;
-  background-color: #fff;
 }
 
 .modal-footer .submit {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #readData form .inputField > div input {
@@ -571,11 +710,13 @@ form .inputField > div input {
   }
 }
 
-/**/
 .btn {
-  width: 150px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
   border-radius: 10%;
+}
+.btn:hover {
+  color: #f07579;
 }
 label {
   font-size: 20px;
@@ -583,7 +724,7 @@ label {
   margin-bottom: 5px;
   display: block;
   color: #f07579;
-  background-color: #fff;
+
   padding: 0;
   margin: 0;
 }
@@ -831,4 +972,17 @@ select {
   font-weight: bold;
   cursor: default;
   color: #777;
+}
+.btnRequest {
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  float: right;
+}
+.btnRequest:hover {
+  color: #f07579;
+}
+#container1 {
+  height: 1000px;
 }

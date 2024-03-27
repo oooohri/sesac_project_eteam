@@ -9,32 +9,19 @@
       href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- My CSS -->
-    <link rel="stylesheet" href="../css/mypage.css" />
-
-    <title>MyPage</title>
+    <link rel="stylesheet" href="/css/mypage.css  " />
+    <script defer src="/js/mouse_cursor.js"></script>
+    <link rel="stylesheet" href="/css/mouse_cursor.css" />
+    <title>마이 페이지</title>
   </head>
   <body>
-    <i class="bx bx-menu"></i>
+    <div id="cursor" style="top: 1060px; left: 996px"></div>
+
     <!-- SIDEBAR -->
     <section id="sidebar">
-      <a href="#" class="brand">
+      <a href="main.html" class="brand">
         <i class="bx bxs-coffee"></i>
         <span class="text">카페로</span>
       </a>
@@ -79,7 +66,8 @@
     <section id="content">
       <!-- NAVBAR -->
       <nav>
-        <a href="#" class="nav-link"></a>
+        <i class="bx bx-menu"></i>
+
         <form action="#">
           <div class="form-input">
             <input type="search" placeholder="Search..." />
@@ -94,9 +82,6 @@
           <i class="bx bxs-bell"></i>
           <span class="num">8</span>
         </a>
-        <a href="#" class="profile">
-          <img src="./Profile Icon.webp" />
-        </a>
       </nav>
       <!-- NAVBAR -->
 
@@ -109,12 +94,12 @@
           <div class="modal fade" id="readData">
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
-                <h2>나의 페이지</h2>
                 <div class="modal-body">
+                  <h2>안녕하세요! 반가워요</h2>
                   <form action="#" id="myForm">
                     <div class="card imgholder">
                       <img
-                        src="../img/profileIcon.webp"
+                        src="/img/profileIcon.webp"
                         alt=""
                         width="400"
                         height="400"
@@ -136,29 +121,29 @@
                           <input
                             type="number"
                             name=""
-                            id="phonenumber"
+                            id="phonenumber1"
                             disabled
                           />
                         </div>
 
-                        <div>
+                        <div class="emaildate">
                           <label for="email"
                             ><i class="bx bxs-envelope"></i>이메일</label
                           >
-                          <input type="email" name="" id="email" disabled />
+                          <input type="email" name="" id="email1" disabled />
                         </div>
 
-                        <div>
-                          <label for="sDate"
+                        <div class="emaildate">
+                          <label for="bitrth1"
                             ><i class="bx bxs-calendar"></i>생년월일</label
                           >
-                          <input type="date" name="" id="sDate" disabled />
+                          <input type="date" name="" id="bitrth1" disabled />
                         </div>
                         <div>
-                          <label for="sDate"
-                            ><i class="bx bxs-location"></i>주소</label
+                          <label for="slocation1"
+                            ><i class="bx bxs-location-plus"></i>주소</label
                           >
-                          <input type="text" name="" id="slocation" disabled />
+                          <input type="text" name="" id="slocation1" disabled />
                         </div>
                       </div>
                     </div>
@@ -170,286 +155,13 @@
         </div>
         <div class="item post">
           <body>
+            <h2>카페 등록 요청 페이지</h2>
             <div class="container" id="container1">
-              <h1>카페 등록 요청 페이지</h1>
-              <div class="map_wrap">
-                <div
-                  id="map"
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    position: relative;
-                    overflow: hidden;
-                  "
-                ></div>
-
-                <div id="menu_wrap" class="bg_white">
-                  <div class="option">
-                    <div>
-                      <form onsubmit="searchPlaces(); return false;">
-                        키워드 :
-                        <input
-                          type="text"
-                          value="이수역 카페"
-                          id="keyword"
-                          size="15"
-                        />
-                        <button type="submit">검색하기</button>
-                      </form>
-                    </div>
-                  </div>
-                  <hr />
-                  <ul id="placesList"></ul>
-                  <div id="pagination"></div>
-                </div>
-              </div>
-
-              <script
-                type="text/javascript"
-                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=94fb1b8b0801c867c40b942254fd6163&libraries=services"
-              ></script>
-              <script>
-                // 마커를 담을 배열입니다
-                var markers = [];
-
-                var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-                  mapOption = {
-                    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-                    level: 3, // 지도의 확대 레벨
-                  };
-
-                // 지도를 생성합니다
-                var map = new kakao.maps.Map(mapContainer, mapOption);
-
-                // 장소 검색 객체를 생성합니다
-                var ps = new kakao.maps.services.Places();
-
-                // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-                var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-
-                // 키워드로 장소를 검색합니다
-                searchPlaces();
-
-                // 키워드 검색을 요청하는 함수입니다
-                function searchPlaces() {
-                  var keyword = document.getElementById('keyword').value;
-
-                  if (!keyword.replace(/^\s+|\s+$/g, '')) {
-                    alert('키워드를 입력해주세요!');
-                    return false;
-                  }
-
-                  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-                  ps.keywordSearch(keyword, placesSearchCB);
-                }
-
-                // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-                function placesSearchCB(data, status, pagination) {
-                  if (status === kakao.maps.services.Status.OK) {
-                    // 정상적으로 검색이 완료됐으면
-                    // 검색 목록과 마커를 표출합니다
-                    displayPlaces(data);
-
-                    // 페이지 번호를 표출합니다
-                    displayPagination(pagination);
-                  } else if (
-                    status === kakao.maps.services.Status.ZERO_RESULT
-                  ) {
-                    alert('검색 결과가 존재하지 않습니다.');
-                    return;
-                  } else if (status === kakao.maps.services.Status.ERROR) {
-                    alert('검색 결과 중 오류가 발생했습니다.');
-                    return;
-                  }
-                }
-
-                // 검색 결과 목록과 마커를 표출하는 함수입니다
-                function displayPlaces(places) {
-                  var listEl = document.getElementById('placesList'),
-                    menuEl = document.getElementById('menu_wrap'),
-                    fragment = document.createDocumentFragment(),
-                    bounds = new kakao.maps.LatLngBounds(),
-                    listStr = '';
-
-                  // 검색 결과 목록에 추가된 항목들을 제거합니다
-                  removeAllChildNods(listEl);
-
-                  // 지도에 표시되고 있는 마커를 제거합니다
-                  removeMarker();
-
-                  for (var i = 0; i < places.length; i++) {
-                    // 마커를 생성하고 지도에 표시합니다
-                    var placePosition = new kakao.maps.LatLng(
-                        places[i].y,
-                        places[i].x
-                      ),
-                      marker = addMarker(placePosition, i),
-                      itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
-
-                    // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-                    // LatLngBounds 객체에 좌표를 추가합니다
-                    bounds.extend(placePosition);
-
-                    // 마커와 검색결과 항목에 mouseover 했을때
-                    // 해당 장소에 인포윈도우에 장소명을 표시합니다
-                    // mouseout 했을 때는 인포윈도우를 닫습니다
-                    (function (marker, title) {
-                      kakao.maps.event.addListener(
-                        marker,
-                        'mouseover',
-                        function () {
-                          displayInfowindow(marker, title);
-                        }
-                      );
-
-                      kakao.maps.event.addListener(
-                        marker,
-                        'mouseout',
-                        function () {
-                          infowindow.close();
-                        }
-                      );
-
-                      itemEl.onmouseover = function () {
-                        displayInfowindow(marker, title);
-                      };
-
-                      itemEl.onmouseout = function () {
-                        infowindow.close();
-                      };
-                    })(marker, places[i].place_name);
-
-                    fragment.appendChild(itemEl);
-                  }
-
-                  // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
-                  listEl.appendChild(fragment);
-                  menuEl.scrollTop = 0;
-
-                  // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-                  map.setBounds(bounds);
-                }
-
-                // 검색결과 항목을 Element로 반환하는 함수입니다
-                function getListItem(index, places) {
-                  var el = document.createElement('li'),
-                    itemStr =
-                      '<span class="markerbg marker_' +
-                      (index + 1) +
-                      '"></span>' +
-                      '<div class="info">' +
-                      '   <h5>' +
-                      places.place_name +
-                      '</h5>';
-
-                  if (places.road_address_name) {
-                    itemStr +=
-                      '    <span>' +
-                      places.road_address_name +
-                      '</span>' +
-                      '   <span class="jibun gray">' +
-                      places.address_name +
-                      '</span>';
-                  } else {
-                    itemStr += '    <span>' + places.address_name + '</span>';
-                  }
-
-                  itemStr +=
-                    '  <span class="tel">' +
-                    places.phone +
-                    '</span>' +
-                    '</div>';
-
-                  el.innerHTML = itemStr;
-                  el.className = 'item';
-
-                  return el;
-                }
-
-                // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
-                function addMarker(position, idx, title) {
-                  var imageSrc =
-                      'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
-                    imageSize = new kakao.maps.Size(36, 37), // 마커 이미지의 크기
-                    imgOptions = {
-                      spriteSize: new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
-                      spriteOrigin: new kakao.maps.Point(0, idx * 46 + 10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
-                      offset: new kakao.maps.Point(13, 37), // 마커 좌표에 일치시킬 이미지 내에서의 좌표
-                    },
-                    markerImage = new kakao.maps.MarkerImage(
-                      imageSrc,
-                      imageSize,
-                      imgOptions
-                    ),
-                    marker = new kakao.maps.Marker({
-                      position: position, // 마커의 위치
-                      image: markerImage,
-                    });
-
-                  marker.setMap(map); // 지도 위에 마커를 표출합니다
-                  markers.push(marker); // 배열에 생성된 마커를 추가합니다
-
-                  return marker;
-                }
-
-                // 지도 위에 표시되고 있는 마커를 모두 제거합니다
-                function removeMarker() {
-                  for (var i = 0; i < markers.length; i++) {
-                    markers[i].setMap(null);
-                  }
-                  markers = [];
-                }
-
-                // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
-                function displayPagination(pagination) {
-                  var paginationEl = document.getElementById('pagination'),
-                    fragment = document.createDocumentFragment(),
-                    i;
-
-                  // 기존에 추가된 페이지번호를 삭제합니다
-                  while (paginationEl.hasChildNodes()) {
-                    paginationEl.removeChild(paginationEl.lastChild);
-                  }
-
-                  for (i = 1; i <= pagination.last; i++) {
-                    var el = document.createElement('a');
-                    el.href = '#';
-                    el.innerHTML = i;
-
-                    if (i === pagination.current) {
-                      el.className = 'on';
-                    } else {
-                      el.onclick = (function (i) {
-                        return function () {
-                          pagination.gotoPage(i);
-                        };
-                      })(i);
-                    }
-
-                    fragment.appendChild(el);
-                  }
-                  paginationEl.appendChild(fragment);
-                }
-
-                // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
-                // 인포윈도우에 장소명을 표시합니다
-                function displayInfowindow(marker, title) {
-                  var content =
-                    '<div style="padding:5px;z-index:1;">' + title + '</div>';
-
-                  infowindow.setContent(content);
-                  infowindow.open(map, marker);
-                }
-
-                // 검색결과 목록의 자식 Element를 제거하는 함수입니다
-                function removeAllChildNods(el) {
-                  while (el.hasChildNodes()) {
-                    el.removeChild(el.lastChild);
-                  }
-                }
-              </script>
-              <br />
-              <label for="cafe-name">카페이름:</label>
+              <label for="cafe-name">카페 이름:</label>
+              <input type="text" id="cafe-name" name="cafe-name" required />
+              <label for="cafe-name">카페 위치:</label>
+              <input type="text" id="cafe-name" name="cafe-name" required />
+              <label for="cafe-name">카페 전화번호:</label>
               <input type="text" id="cafe-name" name="cafe-name" required />
               <br />
               <label for="floor">카페 층 수:</label>
@@ -461,7 +173,7 @@
                 min="1"
                 required
               />
-              <label for="outlet-rate">테이블 당 콘센트 갯수</label>
+              <label for="outlet-rate">테이블 당 콘센트 갯수:</label>
               <input
                 type="number"
                 id="outlet-rate"
@@ -528,14 +240,7 @@
                 rows="4"
                 required
               >
-        월요일: 09:00 ~ 22:00
-        화요일: 09:00 ~ 22:00
-        수요일: 09:00 ~ 22:00
-        목요일: 09:00 ~ 22:00
-        금요일: 09:00 ~ 22:00
-        토요일: 09:00 ~ 22:00
-        일요일: 09:00 ~ 22:00</textarea
-              >
+              </textarea>
 
               <label for="other-info">기타 정보:</label>
               <textarea id="other-info" name="other-info" rows="4"></textarea>
@@ -543,7 +248,9 @@
               <label for="reason">카페를 등록하고 싶은 이유:</label>
               <textarea id="reason" name="reason" rows="4" required></textarea>
 
-              <button onclick="submitRequest()">등록 요청하기</button>
+              <button class="btnRequest" onclick="submitRequest()">
+                등록 요청하기
+              </button>
 
               <script>
                 function toggleOpeningHours(day) {
@@ -576,9 +283,9 @@
           </body>
         </div>
         <div class="item table-data">
+          <h2>할 일 목록</h2>
           <div class="todo">
             <div class="head">
-              <h3>할 일 목록</h3>
               <i class="bx bx-plus"></i>
               <i class="bx bx-filter"></i>
             </div>
@@ -607,6 +314,7 @@
           </div>
         </div>
         <div class="item fix">
+          <h2>내 정보 변경</h2>
           <div class="modal fade" id="userForm">
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
@@ -618,7 +326,7 @@
                         <i class="bx bx-plus-circle"></i>
                       </label>
                       <img
-                        src="../img/profileIcon.webp"
+                        src="/img/profileIcon.webp"
                         alt=""
                         width="400"
                         height="400"
@@ -645,47 +353,52 @@
                           />
                         </div>
 
-                        <div>
+                        <div class="=emaildate">
                           <label for="email"
                             ><i class="bx bxs-envelope"></i>이메일</label
                           >
                           <input type="email" name="" id="email" required />
                         </div>
 
-                        <div>
-                          <label for="sDate"
+                        <div class="emaildate">
+                          <label for="bitrth"
                             ><i class="bx bxs-calendar"></i>생년월일</label
                           >
-                          <input type="date" name="" id="sDate" required />
+                          <input type="date" name="" id="bitrth" required />
                         </div>
                         <div>
-                          <label for="sDate"
-                            ><i class="bx bxs-location"></i>주소</label
+                          <label for="bitrth"
+                            ><i class="bx bxs-location-plus"></i>주소</label
                           >
                           <input type="text" name="" id="slocation" required />
                         </div>
 
-                        <div class="modal-footer">
-                          <button
-                            data-bs-toggle="modal"
-                            data-bs-target="#userForm"
-                            type="button"
-                            form="myForm"
-                            class="btn btn-primary submit"
-                            onclick="setInputValue()"
-                          >
-                            입력
-                          </button>
-                          <button
-                            data-bs-toggle="modal"
-                            data-bs-target="#readData"
-                            type="button"
-                            form="myForm"
-                            class="btn btn-primary submit"
-                          >
-                            버튼
-                          </button>
-                        </div>
+                        <!-- SweetAlert2 CSS 링크 -->
+                        <link
+                          rel="stylesheet"
+                          href="https://cdn.jsdelivr.net/npm/sweetalert2@11"
+                        />
+
+                        <!-- 수정 버튼 -->
+                        <button
+                          class="btn btn-primary submit"
+                          onclick="showAlert()"
+                        >
+                          수정
+                        </button>
+
+                        <!-- SweetAlert2 JS 링크 -->
+                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                        <script>
+                          function showAlert() {
+                            Swal.fire({
+                              title: 'success',
+                              text: '수정이 완료되었습니다.',
+                              icon: 'success',
+                            });
+                          }
+                        </script>
                       </div>
                     </div>
                   </form>
@@ -698,7 +411,11 @@
       <!-- MAIN -->
     </section>
     <!-- CONTENT -->
-
-    <script src="../js/mypage.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/mypage.js"></script>
   </body>
 </html>

@@ -69,13 +69,12 @@ crossorigin="anonymous"
 <link rel="stylesheet" href="../css/banner.css">
 <script src="../js/banner.js"></script>
 
-    <!-- ==== -->
     <style>
       body {
-        background: linear-gradient(to bottom, #f07579 900px, beige 500px);
+        background: linear-gradient(to bottom, #f07579 840px, beige 500px);
         margin: 0;
         padding: 0;
-        height: fit-content;
+        height: fit-content; 
       }
     </style>
   </head>
@@ -83,7 +82,10 @@ crossorigin="anonymous"
     <!-- 마우스 커서 -->
     <div id="cursor" style="top: 1060px; left: 996px"></div>
     <script src="../js/mouse_cursor.js"></script>
+
+    <!-- 헤더 -->
     <header></header>
+
     <!-- 메인 -->
     <main>
       <!-- 카페 광고 섹션 -->
@@ -127,7 +129,7 @@ crossorigin="anonymous"
                   type="text"
                   autocomplete="off"
                   name="keyword"
-                  placeholder="지도를 검색해보세요"
+                  placeholder="카페를 검색해보세요"
                   onclick="trackOutboundLink('home_cta','btn_click','검색input');"
                 />
                 <button
@@ -141,7 +143,7 @@ crossorigin="anonymous"
               </form>
             </div>
             <div class="button-box" style="margin-top: 14px">
-              <a href="#" style="text-decoration: none">
+              <a href="../html/map_view.html" style="text-decoration: none">
                 <div class="button shadow bg-sub text-white">
                   <span>지도에서 카페 찾기</span>
                 </div>
@@ -348,7 +350,7 @@ crossorigin="anonymous"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000"
       >
-        <a href="#">
+        <a href="res(add.css).html">
           <img
             src="../img/사장님 배너.png"
             alt="사장님 컨택배너"
@@ -392,7 +394,7 @@ crossorigin="anonymous"
                 <span class="info-read">[NEW CAFE] 홍대 숨은 보석 NERF</span>
                 <span class="info-cafe">바나나 푸딩이 맛있는 모던한 공간</span>
               </div>
-              <div class="contents__box-img">
+              <div class="contents__box-img cafe_img_hidden">
                 <img src="../img/너프카페.PNG" />
               </div>
               <div class="contents__box-arrow">
@@ -405,7 +407,7 @@ crossorigin="anonymous"
                 <span class="info-read">[HOT CAFE] 동묘 올덴브라운</span>
                 <span class="info-cafe">넓고 섬세한 공간들이 매력만점</span>
               </div>
-              <div class="contents__box-img">
+              <div class="contents__box-img cafe_img_hidden">
                 <img src="../img/올덴브라운 카페.PNG" />
               </div>
               <div class="contents__box-arrow">
@@ -418,7 +420,7 @@ crossorigin="anonymous"
                 <span class="info-read">[TODAY'S CAFE] 신월동 제3화원</span>
                 <span class="info-cafe">푸릇한 식물과 감미로운 BGM이 일품</span>
               </div>
-              <div class="contents__box-img">
+              <div class="contents__box-img cafe_img_hidden">
                 <img src="../img/제3화원 카페.PNG" />
               </div>
               <div class="contents__box-arrow">
@@ -445,6 +447,13 @@ crossorigin="anonymous"
           </div>
         </div>
       </section>
+
+      <!-- 위로가기 -->
+      <span class="b_top"><a href="#top">
+        <img src="../img/위로가기.png" alt="위로가기 화살표">
+      </a></span>
+
+      <!-- 푸터  -->
       <footer></footer>
     </main>
     <script>

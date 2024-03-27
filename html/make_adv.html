@@ -60,29 +60,6 @@
         <div class="preview-section">
           <h2>광고 사진 미리보기</h2>
           <img src="#" alt="광고 사진 미리보기" class="ad-preview" />
-          <script>
-            // 이미지 미리보기 기능 추가
-            const imageInput = document.querySelector('input[type="file"]');
-            const adPreview = document.querySelector('.ad-preview');
-            const adDescription = document.querySelector('.description');
-
-            imageInput.addEventListener('change', function (event) {
-              const file = event.target.files[0];
-              if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                  adPreview.src = e.target.result;
-                  adPreview.alt = adDescription.value; // 광고 설명과 동일한 alt 속성 설정
-                };
-                reader.readAsDataURL(file);
-              }
-            });
-
-            // 광고 설명 입력 시 미리보기 alt 속성 업데이트
-            adDescription.addEventListener('input', function () {
-              adPreview.alt = adDescription.value;
-            });
-          </script>
         </div>
         <br />
         <!-- 종료일 선택 옵션 -->
@@ -107,27 +84,6 @@
               </div>
             </div>
           </div>
-          <script>
-            document
-              .querySelector('.decrement')
-              .addEventListener('click', function () {
-                const endDaysInput = document.getElementById('end-days');
-                let days = parseInt(endDaysInput.value);
-                if (days > 0) {
-                  days--;
-                  endDaysInput.value = days;
-                }
-              });
-
-            document
-              .querySelector('.increment')
-              .addEventListener('click', function () {
-                const endDaysInput = document.getElementById('end-days');
-                let days = parseInt(endDaysInput.value);
-                days++;
-                endDaysInput.value = days;
-              });
-          </script>
         </div>
 
         <!-- 일일 예산 설정 -->
@@ -161,38 +117,54 @@
           </div>
         </div>
       </div>
-      <script>
-        // 일일 예산 바 조절 및 표시 업데이트
-        const budgetRange = document.getElementById('budget');
-        const budgetDisplay = document.getElementById('budget-display');
+    </main>
+    <footer></footer>
+  </body>
+  <script>
+    // 이미지 미리보기 기능 추가
+    const imageInput = document.querySelector('input[type="file"]');
+    const adPreview = document.querySelector('.ad-preview');
+    const adDescription = document.querySelector('.description');
 
-        budgetRange.addEventListener('input', function () {
-          const budgetAmount = parseInt(budgetRange.value);
-          budgetDisplay.textContent = '$' + budgetAmount.toLocaleString();
-        });
-        endDateCheckbox.addEventListener('change', function () {
-          endDatePicker.disabled = !endDateCheckbox.checked;
-          endDaysInput.disabled = endDateCheckbox.checked;
-          if (!endDateCheckbox.checked) {
-            endDaysInput.value = '0';
-          }
-        });
+    imageInput.addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          adPreview.src = e.target.result;
+          adPreview.alt = adDescription.value; // 광고 설명과 동일한 alt 속성 설정
+        };
+        reader.readAsDataURL(file);
+      }
+    });
 
-        document
-          .querySelector('.decrement')
-          .addEventListener('click', function () {
-            const days = parseInt(endDaysInput.value) - 1;
-            if (days >= 0) {
-              endDaysInput.value = days;
-            }
-          });
+    // 광고 설명 입력 시 미리보기 alt 속성 업데이트
+    adDescription.addEventListener('input', function () {
+      adPreview.alt = adDescription.value;
+    });
+  </script>
+  <script>
+    document.querySelector('.decrement').addEventListener('click', function () {
+      const endDaysInput = document.getElementById('end-days');
+      let days = parseInt(endDaysInput.value);
+      if (days > 0) {
+        days--;
+        endDaysInput.value = days;
+      }
+    });
 
-        document
-          .querySelector('.increment')
-          .addEventListener('click', function () {
-            const days = parseInt(endDaysInput.value) + 1;
-            endDaysInput.value = days;
-          });
+    document.querySelector('.increment').addEventListener('click', function () {
+      const endDaysInput = document.getElementById('end-days');
+      let days = parseInt(endDaysInput.value);
+      days++;
+      endDaysInput.value = days;
+    });
+  </script>
+  <script>
+    // 일일 예산 바 조절 및 표시 업데이트
+    const budgetRange = document.getElementById('budget');
+    const budgetDisplay = document.getElementById('budget-display');
+
 
         endDaysInput.addEventListener('input', function () {
           if (parseInt(endDaysInput.value) < 0) {
@@ -225,4 +197,39 @@
     </main>
     <footer></footer>
   </body>
+
+    budgetRange.addEventListener('input', function () {
+      const budgetAmount = parseInt(budgetRange.value);
+      budgetDisplay.textContent = '$' + budgetAmount.toLocaleString();
+    });
+    endDateCheckbox.addEventListener('change', function () {
+      endDatePicker.disabled = !endDateCheckbox.checked;
+      endDaysInput.disabled = endDateCheckbox.checked;
+      if (!endDateCheckbox.checked) {
+        endDaysInput.value = '0';
+      }
+    });
+
+    document.querySelector('.decrement').addEventListener('click', function () {
+      const days = parseInt(endDaysInput.value) - 1;
+      if (days >= 0) {
+        endDaysInput.value = days;
+      }
+    });
+
+    document.querySelector('.increment').addEventListener('click', function () {
+      const days = parseInt(endDaysInput.value) + 1;
+      endDaysInput.value = days;
+    });
+
+    endDaysInput.addEventListener('input', function () {
+      if (parseInt(endDaysInput.value) < 0) {
+        endDaysInput.value = 0;
+      }
+    });
+    function myFunction() {
+      window.location.assign('./pay(card).html');
+    }
+  </script>
+
 </html>

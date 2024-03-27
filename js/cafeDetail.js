@@ -7,46 +7,17 @@ let params = new URLSearchParams(queryString);
 // 특정 파라미터의 값을 가져옴
 let place_id = params.get('place_id');
 
-// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
-var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+localStorage.getItem('cafe_list');
 
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-  mapOption = {
-    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 서울시청 좌표
-    level: 7, // 지도의 확대 레벨
-  };
-
-// 지도를 생성합니다
-var map = new kakao.maps.Map(mapContainer, mapOption);
-
-// 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places(map);
-
-// 카테고리로 카페를 검색합니다
-ps.categorySearch('CE7', placesSearchCB, { useMapBounds: true });
-
-const datas = [];
-
-// 키워드 검색 완료 시 호출되는 콜백함수 입니다
-function placesSearchCB(data, status, pagination) {
-  console.log(data.length);
-  console.log(data);
-  if (status === kakao.maps.services.Status.OK) {
-    console.log(data);
-    for (var i = 0; i < data.length; i++) {
-      datas.push(data[i]);
-
-      if (data[i].id === place_id) {
-        console.log(data);
-        console.log(data[i]);
-        // 받아온 데이터로 화면에 표시
-        displayPlaceDetails(data[i]);
-      }
-    }
+const cafeList = JSON.parse(localStorage.getItem('cafe_list'));
+console.log(cafeList);
+const cafeInfo = cafeList.find((cafe) => {
+  if (cafe.id === place_id) {
+    return cafe;
   }
-}
-
-// console.log(datas);
+});
+console.log(cafeInfo);
+displayPlaceDetails(cafeInfo);
 
 // *-----------------------장소 상세정보 *-----------------------
 // 장소 상세 정보를 화면에 표시하는 함수
@@ -80,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault(); // 기본 동작(폼 제출) 방지
 
     const userId = 'user123';
+    const author = '오유리';
+    const date = '2024.05.10';
     const reviews = [];
 
     // 각 리뷰 세트를 반복하여 처리
@@ -103,14 +76,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (reviews.length === 0) {
       console.error('No reviews to submit');
+      alert('태그선택 후 별점과 리뷰 내용 작성은 필수입니다!');
       return; // 리뷰가 없으면 종료
     }
 
     try {
       // 리뷰 추가
-      await addReviews(userId, reviews);
+      await addReviews(userId, author, date, reviews);
       console.log('Reviews added successfully!');
       // 여기에 추가적인 성공 처리 로직을 구현할 수 있습니다.
+      alert('리뷰 작성이 완료되었습니다!');
+
+      // 리뷰 작성이 완료되면 폼을 초기화합니다.
+      reviewForm.reset();
     } catch (error) {
       console.error('Error adding reviews:', error);
       // 여기에 실패 시 처리할 로직을 구현할 수 있습니다.
@@ -119,12 +97,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // api와 연결
-async function addReviews(userId, reviews) {
+async function addReviews(userId, author, date, reviews) {
   // CRUD CRUD 리소스 경로에 맞게 수정
   const url =
-    'https://crudcrud.com/api/bdf4fcc86b614ab0a78b60c4b41e1fcb/reviews';
+    'https://crudcrud.com/api/d57d36fbc5b84c3ca6a793293ad761e1/reviews';
   const data = {
     userId: userId,
+    author: author,
+    date: date,
     reviews: reviews,
   };
 
@@ -144,6 +124,7 @@ async function addReviews(userId, reviews) {
     const jsonResponse = await response.json();
     console.log('Success:', jsonResponse);
     // 성공 메시지 표시 또는 추가 로직
+    fetchReviews();
   } catch (error) {
     console.error('Error:', error);
     // 실패 메시지 표시 또는 에러 로직
@@ -169,7 +150,6 @@ const reviewData = [
   {
     author: '이순신',
     date: '2024.04.21',
-    image: 'image-url-2.jpg',
     tags: ['#콘센트', '', '#음악', '', ''],
     ratings: ['3', '', '3', '', ''],
     contents: ['콘센트 별로 없는듯', '', '음악이 시끄러움.', '', ''],
@@ -177,7 +157,6 @@ const reviewData = [
   {
     author: '김유신',
     date: '2024.04.20',
-    image: 'image-url-2.jpg',
     tags: ['', '', '', '#카공 분위기', ''],
     ratings: ['', '', '', '5', ''],
     contents: [
@@ -191,7 +170,6 @@ const reviewData = [
   {
     author: '최지원',
     date: '2024.04.19',
-    image: 'image-url-2.jpg',
     tags: ['#콘센트', '', '', '#카공 분위기', ''],
     ratings: ['2', '', '', '4', ''],
     contents: ['콘센트 부족!!!!!!', '', '', '카공 오래해도 뭐라 안합니당', ''],
@@ -199,7 +177,6 @@ const reviewData = [
   {
     author: '신사임당',
     date: '2024.04.18',
-    image: 'image-url-2.jpg',
     tags: ['#콘센트', '#카페공간', '#음악', '#카공 분위기', '#직원 친절'],
     ratings: ['4', '', '', '2', ''],
     contents: [
@@ -213,7 +190,6 @@ const reviewData = [
   {
     author: '황진이',
     date: '2024.04.17',
-    image: 'image-url-2.jpg',
     tags: ['#콘센트', '', '', '#카공 분위기', ''],
     ratings: ['3', '', '', '5', ''],
     contents: [
@@ -249,6 +225,7 @@ function insertReview(reviewData, selectedTag) {
   // 리뷰 상세 정보 삽입
   const reviewContent = `
   <div class="review-wrapper">
+
   <!-- 작성자 -->
   <span class="author-user">${reviewData.author}</span>
   <!-- 구분선 -->
@@ -322,7 +299,42 @@ function filterReviews(tag) {
   });
 
   showReview.innerHTML = '';
-  filteredReviews.forEach((review) => {
-    insertReview(review, tag); // 선택된 태그 전달
-  });
+  if (filteredReviews.length === 0) {
+    // 필터링된 리뷰가 없을 때
+    showReview.innerHTML = '<hr/><p>리뷰가 존재하지 않습니다.</p>';
+  } else {
+    // 필터링된 리뷰가 있을 때
+    filteredReviews.forEach((review) => {
+      insertReview(review, tag); // 선택된 태그 전달
+    });
+  }
 }
+// *---------------------- 리뷰 작성 후 리뷰상세 화면에 표시 ----------------------------------
+
+// API로부터 리뷰 데이터 가져오기
+async function fetchReviews() {
+  const apiUrl =
+    'https://crudcrud.com/api/d57d36fbc5b84c3ca6a793293ad761e1/reviews'; // 실제 요청할 API의 URL로 변경해주세요.
+
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      // 서버로부터의 응답이 성공적이지 않을 경우 에러 처리
+      throw new Error('Network response was not ok');
+    }
+
+    // 응답 데이터(JSON)를 자바스크립트 객체로 변환
+    const data = await response.json();
+
+    // 데이터 처리 로직 (예: 화면에 표시)
+    console.log(data);
+    // 이후 데이터를 활용한 로직을 추가합니다. 예를 들어, 화면에 리뷰를 표시하는 등
+    return data; // 필요한 경우 데이터를 반환
+  } catch (error) {
+    console.error('There has been a problem with your fetch operation:', error);
+  }
+}
+// 페이지 로드 시 리뷰 데이터 가져와서 리뷰 상세에 표시
+document.addEventListener('DOMContentLoaded', function () {
+  fetchReviews();
+});
