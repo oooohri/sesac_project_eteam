@@ -162,6 +162,9 @@ body {
   border-radius: 5px;
   cursor: pointer;
   float: center;
+  position: absolute;
+  top: 100%;
+  left: 35%;
 }
 
 .account-center {

@@ -166,10 +166,11 @@ body {
   color: var(--blue);
 }
 #sidebar .side-menu li a .bx {
-  min-width: calc(60px - ((4px + 6px) * 2));
+  min-width: 10px;
   display: flex;
   justify-content: center;
 }
+
 /* SIDEBAR */
 
 /* CONTENT */
@@ -193,9 +194,9 @@ body {
   align-items: center;
   grid-gap: 24px;
   font-family: var(--lato);
-  position: sticky;
+  position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
   z-index: 1000;
 }
 #content nav::before {
@@ -224,9 +225,20 @@ body {
 }
 #content nav form {
   max-width: 400px;
-  width: 100%;
-  margin-right: auto;
 }
+
+.header-input-btn {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch-btn-box {
+  position: fixed;
+  right: 30px;
+}
+
 #content nav form .form-input {
   display: flex;
   align-items: center;
@@ -234,13 +246,12 @@ body {
 }
 #content nav form .form-input input {
   flex-grow: 1;
-  padding: 0 16px;
+  padding: 0 30px;
   height: 100%;
   border: none;
   background: var(--grey);
   border-radius: 36px 0 0 36px;
   outline: none;
-  width: 100%;
   color: var(--dark);
 }
 #content nav form .form-input button {
@@ -320,11 +331,14 @@ footer {
 }
 
 .footer-container {
-  width: 100%;
-  max-width: 1000px;
+  width: 60%;
   padding: 30px 30px 0 30px;
   text-align: center;
   font-size: 15px;
+}
+
+.footer-container > .row {
+  padding-left: 70px;
 }
 
 main {
@@ -337,7 +351,6 @@ main {
 }
 
 footer {
-  height: 265px;
   margin-left: 0; /* 사이드바 영향을 받지 않도록 변경 */
   width: 100%; /* 화면 전체 넓이를 사용하도록 설정 */
   color: #fff;
@@ -358,9 +371,35 @@ footer .col-4 {
   display: flex;
   justify-content: space-evenly;
 }
-/* x버튼 기본적으로 display: none;
-position: 
-*/
+
+/* 위로 가기 btn */
+.b_top {
+  position: fixed;
+  z-index: 1001;
+  background-color: #ce3536;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  text-align: center;
+  height: 40px;
+  border-radius: 20px;
+  opacity: 0%;
+}
+
+/* 헤더 로고 조정 */
+
+img-container {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 90%;
+  height: auto;
+  padding-left: 40px;
+  padding-top: 30px;
+}
 
 @media (max-width: 700px) {
   #sidebar {

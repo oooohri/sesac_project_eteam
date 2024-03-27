@@ -1,4 +1,10 @@
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+const inputName1 = document.getElementById('name1');
+const phonenumber1 = document.getElementById('phonenumber1');
+const email1 = document.getElementById('email1');
+const bitrth1 = document.getElementById('bitrth1');
+const slocation1 = document.getElementById('slocation1');
+console.log(bitrth1);
 
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
@@ -82,6 +88,18 @@ for (let i = 0; i < li_elements.length; i++) {
       inputName1.value = JSON.parse(
         localStorage.getItem('userProfile')
       ).userName;
+      document.querySelector('.' + li_value).style.display = 'block';
+      phonenumber1.value = JSON.parse(
+        localStorage.getItem('userProfile')
+      ).phone;
+      document.querySelector('.' + li_value).style.display = 'block';
+      email1.value = JSON.parse(localStorage.getItem('userProfile')).email;
+      document.querySelector('.' + li_value).style.display = 'block';
+      bitrth1.value = JSON.parse(localStorage.getItem('userProfile')).birth;
+      document.querySelector('.' + li_value).style.display = 'block';
+      slocation1.value = JSON.parse(
+        localStorage.getItem('userProfile')
+      ).location;
     } else if (li_value == 'post') {
       document.querySelector('.' + li_value).style.display = 'block';
     } else if (li_value == 'table-data') {
@@ -100,7 +118,7 @@ const form = document.getElementById('myForm'),
   userName = document.getElementById('name'),
   email = document.getElementById('email'),
   phone = document.getElementById('phonenumber'),
-  sDate = document.getElementById('sDate'),
+  bitrth = document.getElementById('bitrth'),
   sLocation = document.getElementById('slocation'),
   submitBtn = document.querySelector('.submit'),
   userInfo = document.getElementById('readData'),
@@ -125,14 +143,30 @@ submitBtn.addEventListener('click', () => {
   // submitBtn.innerText = '저장';
   // modalTitle.innerText = 'Fill the Form';
   console.log(userName.value);
+  console.log(phone.value);
   isEdit = false;
-  imgInput.src = 'profileIcon.webp';
+  imgInput.src = 'Profile Icon.webp';
+
   localStorage.setItem(
     'userProfile',
-    JSON.stringify({ userName: userName.value })
+    JSON.stringify({
+      userName: userName.value,
+      phone: phone.value,
+      email: email.value,
+      bitrth: bitrth.value,
+      location: sLocation.value,
+    })
   );
+
+  // localStorage.setItem('userProfile', JSON.stringify({ phone: phone.value }));
+  // localStorage.setItem('userProfile', JSON.stringify({ email: email.value }));
+  // localStorage.setItem('userProfile', JSON.stringify({ Sdate: Sdate.value }));
+  // localStorage.setItem(
+  //   'userProfile',
+  //   JSON.stringify({ location: location.value })
+  // );
   console.log(localStorage.getItem('userProfile'));
-  form.reset();
+  // form.reset();
 });
 
 file.onchange = function () {
@@ -151,7 +185,7 @@ file.onchange = function () {
   }
 };
 
-function readInfo(pic, name, age, city, email, phone, post, sDate) {
+function readInfo(pic, name, age, city, email, phone, post, birth) {
   (document.querySelector('.showImg').src = pic),
     (document.querySelector('#showName').value = userNameData),
     (document.querySelector('#showAge').value = age),
@@ -159,10 +193,10 @@ function readInfo(pic, name, age, city, email, phone, post, sDate) {
     (document.querySelector('#showEmail').value = email),
     (document.querySelector('#showPhone').value = phone),
     (document.querySelector('#showPost').value = post),
-    (document.querySelector('#showsDate').value = sDate);
+    (document.querySelector('#showsDate').value = birth);
 }
 
-function editInfo(index, pic, name, Age, City, Email, Phone, Post, Sdate) {
+function editInfo(index, pic, name, Age, City, Email, Phone, Post, birth) {
   isEdit = true;
   editId = index;
   imgInput.src = pic;
@@ -172,7 +206,7 @@ function editInfo(index, pic, name, Age, City, Email, Phone, Post, Sdate) {
   (email.value = Email),
     (phone.value = Phone),
     (post.value = Post),
-    (sDate.value = Sdate);
+    (birth.value = birth);
 
   submitBtn.innerText = 'Update';
   modalTitle.innerText = 'Update The Form';
@@ -186,39 +220,38 @@ function deleteInfo(index) {
   }
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault();
 
-  const information = {
-    picture:
-      imgInput.src == undefined ? './image/Profile Icon.webp' : imgInput.src,
-    employeeName: userName.value,
-    employeeAge: age.value,
-    employeeCity: city.value,
-    employeeEmail: email.value,
-    employeePhone: phone.value,
-    employeePost: post.value,
-    startDate: sDate.value,
-  };
+//   const information = {
+//     picture: imgInput.src == undefined ? '/img/profileIcon.webp' : imgInput.src,
+//     employeeName: userName.value,
+//     employeeAge: age.value,
+//     employeeCity: city.value,
+//     employeeEmail: email.value,
+//     employeePhone: phone.value,
+//     employeePost: post.value,
+//     startDate: sDate.value,
+//   };
 
-  if (!isEdit) {
-    getData.push(information);
-  } else {
-    isEdit = false;
-    getData[editId] = information;
-  }
+//   if (!isEdit) {
+//     getData.push(information);
+//   } else {
+//     isEdit = false;
+//     getData[editId] = information;
+//   }
 
-  localStorage.setItem('userProfile', JSON.stringify(getData));
+//   localStorage.setItem('userProfile', JSON.stringify(getData));
 
-  submitBtn.innerText = 'Submit';
-  modalTitle.innerHTML = 'Fill The Form';
+//   submitBtn.innerText = 'Submit';
+//   modalTitle.innerHTML = 'Fill The Form';
 
-  showInfo();
+//   showInfo();
 
-  form.reset();
+//   form.reset();
 
-  imgInput.src = './image/Profile Icon.webp';
+//   imgInput.src = '/img/profileIcon.webp';
 
-  // modal.style.display = "none"
-  // document.querySelector(".modal-backdrop").remove()
-});
+//   // modal.style.display = "none"
+//   // document.querySelector(".modal-backdrop").remove()
+// });
