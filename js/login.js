@@ -46,13 +46,9 @@ function myFunction() {
         title: '로그인 되었습니다!',
         icon: 'success',
       });
-      window.location.assign('/sesac_project_eteam/html/smypage.html');
+      window.location.assign('/sesac_project_eteam/html/mypage.html');
     } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: '아이디나 비밀번호를 확인하세요!',
-      });
+      alert('아이디나 비밀번호를 확인하세요!');
     }
   }
 
