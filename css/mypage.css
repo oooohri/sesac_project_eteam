@@ -16,7 +16,7 @@ a {
   text-decoration: none;
 }
 body {
-  cursor: url('/img/2x/자산\ 14@2x.png');
+  cursor: url('/img/2x/커서이미지.png');
 }
 li {
   list-style: none;
@@ -216,7 +216,7 @@ body {
 }
 #content nav form {
   max-width: 400px;
-  width: 100%;
+
   margin-right: auto;
 }
 #content nav form .form-input {
@@ -356,11 +356,9 @@ body {
   margin-inline: 10px;
   justify-content: space-between;
 }
-.inputField {
-  width: 800px;
-}
+
 .emaildate {
-  padding: 10px 0px 10px 0px;
+  padding: 14px 0px 0px 0px;
 }
 h2 {
   padding: 15px;
@@ -539,19 +537,20 @@ td button i {
 
 .modal-body form {
   display: flex;
-  /* justify-content: space-between; */
   align-items: flex-start;
   padding: 0;
   background: #fff;
   border-radius: 30px;
+  width: 1000px;
+  height: 500px;
 }
-
 .modal-body form .imgholder {
   width: 400px;
   height: 400px;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+  top: 60px;
 }
 
 .imgholder .upload {
@@ -628,13 +627,13 @@ tr {
   display: none;
 }
 form .inputField > div {
-  width: 100%;
+  width: 500px;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  position: relative;
-  top: 30%;
+  margin-bottom: 30px;
+  position: sticky;
   justify-content: space-between;
+  top: 100px;
 }
 
 #userForm form .inputField > div label::after {
@@ -643,7 +642,7 @@ form .inputField > div {
 }
 
 form .inputField > div input {
-  width: 75%;
+  width: 60%;
   padding: auto;
   border: none;
   outline: none;
@@ -661,73 +660,14 @@ form .inputField > div input {
   font-size: 18px;
 }
 
-@media screen and (max-width: 768px) {
-  #sidebar {
-    width: 200px;
-  }
-
-  #content {
-    width: calc(100% - 60px);
-    left: 200px;
-  }
-
-  #content nav .nav-link {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  #content nav form .form-input input {
-    display: none;
-  }
-
-  #content nav form .form-input button {
-    width: auto;
-    height: auto;
-    background: transparent;
-    border-radius: none;
-    color: var(--dark);
-  }
-
-  #content nav form.show .form-input input {
-    display: block;
-    width: 100%;
-  }
-  #content nav form.show .form-input button {
-    width: 36px;
-    height: 100%;
-    border-radius: 0 36px 36px 0;
-    color: var(--light);
-    background: var(--red);
-  }
-
-  #content nav form.show ~ .notification,
-  #content nav form.show ~ .profile {
-    display: none;
-  }
-
-  #content main .box-info {
-    grid-template-columns: 1fr;
-  }
-
-  #content main .table-data .head {
-    min-width: 420px;
-  }
-  #content main .table-data .order table {
-    min-width: 420px;
-  }
-  #content main .table-data .todo .todo-list {
-    min-width: 420px;
-  }
-}
-
 .btn {
   width: 120px;
   height: 40px;
   border-radius: 10%;
+  font-size: 20px;
 }
 .btn:hover {
-  color: #f07579;
+  background-color: #f07579;
 }
 label {
   font-size: 20px;
@@ -878,112 +818,6 @@ select {
 #menu_wrap .option button {
   margin-left: 5px;
 }
-#placesList li {
-  list-style: none;
-}
-#placesList .item {
-  position: relative;
-  border-bottom: 1px solid #888;
-  overflow: hidden;
-  cursor: pointer;
-  min-height: 65px;
-}
-#myForm {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
-#placesList .item span {
-  display: block;
-  margin-top: 4px;
-}
-#placesList .item h5,
-#placesList .item .info {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-#placesList .item .info {
-  padding: 10px 0 10px 55px;
-}
-#placesList .info .gray {
-  color: #8a8a8a;
-}
-#placesList .info .jibun {
-  padding-left: 26px;
-  background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png)
-    no-repeat;
-}
-#placesList .info .tel {
-  color: #009900;
-}
-#placesList .item .markerbg {
-  float: left;
-  position: absolute;
-  width: 36px;
-  height: 37px;
-  margin: 10px 0 0 10px;
-  background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png)
-    no-repeat;
-}
-#placesList .item .marker_1 {
-  background-position: 0 -10px;
-}
-#placesList .item .marker_2 {
-  background-position: 0 -56px;
-}
-#placesList .item .marker_3 {
-  background-position: 0 -102px;
-}
-#placesList .item .marker_4 {
-  background-position: 0 -148px;
-}
-#placesList .item .marker_5 {
-  background-position: 0 -194px;
-}
-#placesList .item .marker_6 {
-  background-position: 0 -240px;
-}
-#placesList .item .marker_7 {
-  background-position: 0 -286px;
-}
-#placesList .item .marker_8 {
-  background-position: 0 -332px;
-}
-#placesList .item .marker_9 {
-  background-position: 0 -378px;
-}
-#placesList .item .marker_10 {
-  background-position: 0 -423px;
-}
-#placesList .item .marker_11 {
-  background-position: 0 -470px;
-}
-#placesList .item .marker_12 {
-  background-position: 0 -516px;
-}
-#placesList .item .marker_13 {
-  background-position: 0 -562px;
-}
-#placesList .item .marker_14 {
-  background-position: 0 -608px;
-}
-#placesList .item .marker_15 {
-  background-position: 0 -654px;
-}
-#pagination {
-  margin: 10px auto;
-  text-align: center;
-}
-#pagination a {
-  display: inline-block;
-  margin-right: 10px;
-}
-#pagination .on {
-  font-weight: bold;
-  cursor: default;
-  color: #777;
-}
 .btnRequest {
   width: 120px;
   height: 40px;
@@ -992,7 +826,7 @@ select {
   float: right;
 }
 .btnRequest:hover {
-  color: #f07579;
+  background-color: #f07579;
 }
 #container1 {
   height: 1000px;
