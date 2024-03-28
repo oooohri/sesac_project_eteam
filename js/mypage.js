@@ -113,7 +113,8 @@ for (let i = 0; i < li_elements.length; i++) {
 }
 
 const form = document.getElementById('myForm'),
-  imgInput = document.querySelector('.img'),
+  imgInput = document.querySelector('.img1'),
+  imgInput1 = document.querySelector('.img'),
   file = document.getElementById('imgInput'),
   userName = document.getElementById('name'),
   email = document.getElementById('email'),
@@ -145,11 +146,12 @@ submitBtn.addEventListener('click', () => {
   console.log(userName.value);
   console.log(phone.value);
   isEdit = false;
-  imgInput.src = 'Profile Icon.webp';
+  imgInput.src = '/img/profileIcon.webp';
 
   localStorage.setItem(
     'userProfile',
     JSON.stringify({
+      //  picture: imgInput.src == undefined ? '/img/profileIcon.webp' : imgInput.src
       userName: userName.value,
       phone: phone.value,
       email: email.value,
@@ -177,6 +179,7 @@ file.onchange = function () {
     fileReader.onload = function (e) {
       imgUrl = e.target.result;
       imgInput.src = imgUrl;
+      imgInput1.src = imgUrl;
     };
 
     fileReader.readAsDataURL(file.files[0]);
@@ -195,63 +198,3 @@ function readInfo(pic, name, age, city, email, phone, post, birth) {
     (document.querySelector('#showPost').value = post),
     (document.querySelector('#showsDate').value = birth);
 }
-
-function editInfo(index, pic, name, Age, City, Email, Phone, Post, birth) {
-  isEdit = true;
-  editId = index;
-  imgInput.src = pic;
-  userName.value = name;
-  age.value = Age;
-  city.value = City;
-  (email.value = Email),
-    (phone.value = Phone),
-    (post.value = Post),
-    (birth.value = birth);
-
-  submitBtn.innerText = 'Update';
-  modalTitle.innerText = 'Update The Form';
-}
-
-function deleteInfo(index) {
-  if (confirm('Are you sure want to delete?')) {
-    getData.splice(index, 1);
-    localStorage.setItem('userProfile', JSON.stringify(getData));
-    showInfo();
-  }
-}
-
-// form.addEventListener('submit', (e) => {
-//   e.preventDefault();
-
-//   const information = {
-//     picture: imgInput.src == undefined ? '/img/profileIcon.webp' : imgInput.src,
-//     employeeName: userName.value,
-//     employeeAge: age.value,
-//     employeeCity: city.value,
-//     employeeEmail: email.value,
-//     employeePhone: phone.value,
-//     employeePost: post.value,
-//     startDate: sDate.value,
-//   };
-
-//   if (!isEdit) {
-//     getData.push(information);
-//   } else {
-//     isEdit = false;
-//     getData[editId] = information;
-//   }
-
-//   localStorage.setItem('userProfile', JSON.stringify(getData));
-
-//   submitBtn.innerText = 'Submit';
-//   modalTitle.innerHTML = 'Fill The Form';
-
-//   showInfo();
-
-//   form.reset();
-
-//   imgInput.src = '/img/profileIcon.webp';
-
-//   // modal.style.display = "none"
-//   // document.querySelector(".modal-backdrop").remove()
-// });
