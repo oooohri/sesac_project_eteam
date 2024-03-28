@@ -41,29 +41,30 @@ function myFunction() {
     });
 
   if (id === 'admin' && password === '123') {
-  if (id === 'admin' && password === '123') {
-    Swal.fire({
-      title: '로그인 되었습니다!',
-      icon: 'success',
-    });
-    window.location.assign('mypage.html');
-  } else {
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: '아이디나 비밀번호를 확인하세요!',
-    });
+    if (id === 'admin' && password === '123') {
+      Swal.fire({
+        title: '로그인 되었습니다!',
+        icon: 'success',
+      });
+      window.location.assign('/sesac_project_eteam/html/smypage.html');
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: '아이디나 비밀번호를 확인하세요!',
+      });
+    }
   }
-}
 
-function checkNum(event) {
-  var key = event.key;
-  console.log(key);
-  if (key.trim() == !'' || key.includes(' ')) {
-    alert('잘 못 입력했습니다');
-  }
-  if (event.target.value === ' ') {
-    idIput.value = '';
+  function checkNum(event) {
+    var key = event.key;
+    console.log(key);
+    if (key.trim() == !'' || key.includes(' ')) {
+      alert('잘 못 입력했습니다');
+    }
+    if (event.target.value === ' ') {
+      idIput.value = '';
+    }
   }
   // // 맨 앞과 뒤의 공백을 제거한 후 빈 값인지 확인
   // if (id.trim() === '') {
