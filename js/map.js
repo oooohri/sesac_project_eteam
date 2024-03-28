@@ -53,6 +53,7 @@ function displayMarker(place) {
   // 마커를 클릭하면 상세 페이지로 이동합니다
   kakao.maps.event.addListener(marker, 'click', function () {
     window.location.href =
-      'https://oooohri.github.io/sesac_project_eteam?place_id=' + place.id;
+      'https://oooohri.github.io/sesac_project_eteam/html/cafeDetail.html?place_id=' +
+      place.id;
   });
 }
