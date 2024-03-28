@@ -146,7 +146,7 @@ submitBtn.addEventListener('click', () => {
   console.log(userName.value);
   console.log(phone.value);
   isEdit = false;
-  imgInput.src = '/img/profileIcon.webp';
+  imgInput.src = '/sesac_project_eteam/img/profileIcon.webp';
 
   localStorage.setItem(
     'userProfile',
