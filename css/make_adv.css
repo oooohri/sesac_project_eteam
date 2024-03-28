@@ -1,16 +1,16 @@
 /* CSS 스타일링 */
-button
-
 /* 광고 미리보기 영역 스타일 */
 .preview-section {
   margin-top: 30px;
-  border-radius: 8p;
+  border-radius: 8px;
   border: 1px solid #ccc;
   padding: 20px;
 }
+
 body {
   cursor: url('/sesac_project_eteam/img/2x/커서이미지.png');
 }
+
 .preview-section h2 {
   margin-bottom: 10px;
 }
@@ -26,9 +26,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: GangwonEdu_OTFBoldA;
-
   color: #f07579;
 }
+
 @font-face {
   font-family: 'GangwonEdu_OTFBoldA';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
@@ -42,12 +42,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: beige;
-
   align-items: center;
 }
+
 .goal-text {
   text-align: center;
 }
+
 .goal-section {
   background-color: #ffffff;
   padding: 20px;
@@ -57,18 +58,17 @@ body {
 .goal-section .goal-text {
   font-size: 40px;
 }
+
 .flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .creative-section {
   background-color: #ffffff;
   padding: 20px;
-  margin-left: 40px;
-  margin-right: 40px;
-  /* position: fixed; */
-
+  margin: 0 40px; /* 좌우 여백 설정 */
   align-items: center;
 }
 
@@ -164,7 +164,7 @@ body {
   display: inline-block;
   background-color: #f07579;
   color: white;
-  padding: 20px 396px;
+  padding: 20px 5%; /* 상대적인 값으로 변경 */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -212,25 +212,30 @@ body {
   margin-right: 10px;
   cursor: pointer;
 }
+
 .date-selector {
   height: 40px;
-  width: 650px;
+  width: 90%; /* 상대적인 값으로 변경 */
+  max-width: 650px; /* 최대 너비 지정 */
   display: flex;
   align-items: center;
   border: 2px solid rgb(52, 51, 51);
   padding: 10px;
-  margin: 15px;
+  margin: 15px auto; /* 가운데 정렬을 위해 수정 */
   border-radius: 8px;
 }
+
 .end-date-picker {
   height: 40px;
-  width: 650px;
+  width: calc(100% - 30px); /* 상대적인 값으로 변경 */
+  max-width: 650px; /* 최대 너비 지정 */
   align-items: center;
   border: 2px solid rgb(52, 51, 51);
   padding: 15px;
-  margin: 10px;
+  margin: 10px auto; /* 가운데 정렬을 위해 수정 */
   border-radius: 8px;
 }
+
 .label {
   margin-right: 10px;
 }
@@ -261,6 +266,7 @@ button:hover {
 button:active {
   background-color: #f07579;
 }
+
 /* 원화 바꾸기 */
 .dropdown {
   position: relative;
@@ -316,6 +322,7 @@ button:active {
   align-items: center;
   justify-content: center;
 }
+
 #end-days {
   border-radius: 10px;
 }
