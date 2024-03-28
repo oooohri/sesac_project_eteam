@@ -14,7 +14,7 @@ sign_in_btn.addEventListener('click', () => {
 
 const users = [
   {
-    id: 'zaya',
+    id: 'admin',
     password: '123',
   },
 ];
