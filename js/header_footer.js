@@ -1,11 +1,11 @@
 document.querySelector('header').innerHTML = `<section id="sidebar">
-  <a href="../html/main.html" class="brand img-container">
-    <img src="../img/카페로_로고.png" alt="카페로_로고" />
+  <a href="/sesac_project_eteam/" class="brand img-container">
+    <img src="/sesac_project_eteam/img/카페로_로고.png" alt="카페로_로고" />
   </a>
   <ul class="side-menu main">
   
     <li data-li="info" class="active">
-      <a href="../html/map.html">
+      <a href="/sesac_project_eteam/html/map.html">
         <svg class="bx bxs-map" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
           <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
         </svg>
@@ -14,7 +14,7 @@ document.querySelector('header').innerHTML = `<section id="sidebar">
     </li>
 
     <li data-li="table-data">
-      <a href="../html/mypage.html">
+      <a href="/sesac_project_eteam/html/mypage.html">
       <svg class="bx bxs-mypage" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
       </svg>
@@ -43,7 +43,7 @@ document.querySelector('header').innerHTML = `<section id="sidebar">
   </li>
 
   <li data-li="table-data">
-    <a href="../html/make_adv.html">
+    <a href="/sesac_project_eteam/html/make_adv.html">
     <svg class="bx bxs-adv" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
       <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
       <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
@@ -58,7 +58,7 @@ document.querySelector('header').innerHTML = `<section id="sidebar">
   <ul class="side-menu">
 
     <li>
-      <a href="../html/login.html" class="logout">
+      <a href="/sesac_project_eteam/html/login.html" class="logout">
       <svg class="bx bxs-login" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
         <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
@@ -113,17 +113,17 @@ document.querySelector('footer').innerHTML = `
       <!-- Service center, privacy cols-->
       <div class="col-3">
           <div class="row p-2 text-start">
-                  <a class="no-decoration underline-hover" href="/html/term.html">서비스 이용약관</a>
+                  <a class="no-decoration underline-hover" href="/sesac_project_eteam/html/term.html">서비스 이용약관</a>
           </div>
           <div class="row p-2 text-start">
-                  <a class="no-decoration underline-hover" href="/html/privacy.html">개인정보처리발침</a>
+                  <a class="no-decoration underline-hover" href="/sesac_project_eteam/html/privacy.html">개인정보처리발침</a>
           </div>
       </div>
       <div class="col-4">
-            <a href="https://www.facebook.com/" target="_blank" class="axo bkw"><img src="/img/logo_facebook.svg"/></a>
-            <a href="https://www.instagram.com/" target="_blank" class="axo bkw"><img src="/img/logo_insta.svg"/></a>                       
-            <a href="https://www.google.com/" target="_blank" class="axo bkw"><img src="/img/logo_gmail.svg"/></a>
-            <a href="https://www.naver.com/" target="_blank" class="axo bkw"><img src="/img/logo_naver.svg"/></a>
+            <a href="https://www.facebook.com/" target="_blank" class="axo bkw"><img src="/sesac_project_eteam/img/logo_facebook.svg"/></a>
+            <a href="https://www.instagram.com/" target="_blank" class="axo bkw"><img src="/sesac_project_eteam/img/logo_insta.svg"/></a>                       
+            <a href="https://www.google.com/" target="_blank" class="axo bkw"><img src="/sesac_project_eteam/img/logo_gmail.svg"/></a>
+            <a href="https://www.naver.com/" target="_blank" class="axo bkw"><img src="/sesac_project_eteam/img/logo_naver.svg"/></a>
       </div>
   </div>
   <hr aria-hidden="true" class="sb-rule mt-4" />
