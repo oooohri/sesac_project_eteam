@@ -33,20 +33,22 @@ function myFunction() {
       let parser = new DOMParser();
       let myPageDOM = parser.parseFromString(html, 'text/html');
       let idElement = myPageDOM.getElementById('div#output1');
-      output1.innerHTML = id.value;
-      console.log(output1);
+      // output1.innerHTML = id.value;
+      // console.log(output1);
     })
     .catch((error) => {
-      alert('아이디나 비밀번호를 확인하세요!');
       console.error('Error ', error);
     });
 
   if (id === 'admin' && password === '123') {
+    // if (id === 'admin' && password === '123') {
     Swal.fire({
       title: '로그인 되었습니다!',
       icon: 'success',
     });
     window.location.assign('/sesac_project_eteam/html/mypage.html');
+  } else {
+    alert('아이디나 비밀번호를 확인하세요!');
   }
 }
 
@@ -86,3 +88,4 @@ function checkNum(event) {
 // }
 
 // return true; // 모든 조건을 통과한 경우 유효한 아이디
+// }
