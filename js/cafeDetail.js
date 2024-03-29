@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function addReviews(userId, author, date, reviews) {
   // CRUD CRUD 리소스 경로에 맞게 수정
   const url =
-    'https://crudcrud.com/api/d57d36fbc5b84c3ca6a793293ad761e1/reviews';
+    'https://crudcrud.com/api/197fb17e4bbf4b2bb57019b6c37d372e/reviews';
   const data = {
     userId: userId,
     author: author,
@@ -309,32 +309,32 @@ function filterReviews(tag) {
     });
   }
 }
-// *---------------------- 리뷰 작성 후 리뷰상세 화면에 표시 ----------------------------------
+// // *---------------------- 리뷰 작성 후 리뷰상세 화면에 표시 ----------------------------------
 
-// API로부터 리뷰 데이터 가져오기
-async function fetchReviews() {
-  const apiUrl =
-    'https://crudcrud.com/api/d57d36fbc5b84c3ca6a793293ad761e1/reviews'; // 실제 요청할 API의 URL로 변경해주세요.
+// // API로부터 리뷰 데이터 가져오기
+// async function fetchReviews() {
+//   const apiUrl =
+//     'https://crudcrud.com/api/d57d36fbc5b84c3ca6a793293ad761e1/reviews'; // 실제 요청할 API의 URL로 변경해주세요.
 
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      // 서버로부터의 응답이 성공적이지 않을 경우 에러 처리
-      throw new Error('Network response was not ok');
-    }
+//   try {
+//     const response = await fetch(apiUrl);
+//     if (!response.ok) {
+//       // 서버로부터의 응답이 성공적이지 않을 경우 에러 처리
+//       throw new Error('Network response was not ok');
+//     }
 
-    // 응답 데이터(JSON)를 자바스크립트 객체로 변환
-    const data = await response.json();
+//     // 응답 데이터(JSON)를 자바스크립트 객체로 변환
+//     const data = await response.json();
 
-    // 데이터 처리 로직 (예: 화면에 표시)
-    console.log(data);
-    // 이후 데이터를 활용한 로직을 추가합니다. 예를 들어, 화면에 리뷰를 표시하는 등
-    return data; // 필요한 경우 데이터를 반환
-  } catch (error) {
-    console.error('There has been a problem with your fetch operation:', error);
-  }
-}
-// 페이지 로드 시 리뷰 데이터 가져와서 리뷰 상세에 표시
-document.addEventListener('DOMContentLoaded', function () {
-  fetchReviews();
-});
+//     // 데이터 처리 로직 (예: 화면에 표시)
+//     console.log(data);
+//     // 이후 데이터를 활용한 로직을 추가합니다. 예를 들어, 화면에 리뷰를 표시하는 등
+//     return data; // 필요한 경우 데이터를 반환
+//   } catch (error) {
+//     console.error('There has been a problem with your fetch operation:', error);
+//   }
+// }
+// // 페이지 로드 시 리뷰 데이터 가져와서 리뷰 상세에 표시
+// document.addEventListener('DOMContentLoaded', function () {
+//   fetchReviews();
+// });
