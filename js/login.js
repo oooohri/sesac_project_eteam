@@ -37,6 +37,7 @@ function myFunction() {
       console.log(output1);
     })
     .catch((error) => {
+      alert('아이디나 비밀번호를 확인하세요!');
       console.error('Error ', error);
     });
 
@@ -46,8 +47,6 @@ function myFunction() {
       icon: 'success',
     });
     window.location.assign('/sesac_project_eteam/html/mypage.html');
-  } else {
-    alert('아이디나 비밀번호를 확인하세요!');
   }
 }
 
