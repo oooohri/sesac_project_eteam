@@ -41,15 +41,23 @@ function myFunction() {
     });
 
   if (id === 'admin' && password === '123') {
-    // if (id === 'admin' && password === '123') {
     Swal.fire({
       title: '로그인 되었습니다!',
       icon: 'success',
     });
-    window.location.assign('/sesac_project_eteam/html/mypage.html');
   } else {
     alert('아이디나 비밀번호를 확인하세요!');
   }
+
+  //   if (id === 'admin' && password === '123') {
+  //   Swal.fire({
+  //     title: '로그인 되었습니다!',
+  //     icon: 'success',
+  //   });
+  //   window.location.assign('/sesac_project_eteam/html/mypage.html');
+  // } else {
+  //   alert('아이디나 비밀번호를 확인하세요!');
+  // }
 }
 
 function checkNum(event) {
