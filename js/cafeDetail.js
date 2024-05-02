@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function addReviews(userId, author, date, reviews) {
   // CRUD CRUD 리소스 경로에 맞게 수정
   const url =
-    'https://crudcrud.com/api/197fb17e4bbf4b2bb57019b6c37d372e/reviews';
+    'https://crudcrud.com/api/8ca2d7fb473b43ac89c4b4acee013f36/reviews';
   const data = {
     userId: userId,
     author: author,

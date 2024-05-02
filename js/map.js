@@ -18,8 +18,11 @@ ps.categorySearch('CE7', placesSearchCB, { useMapBounds: true });
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {
   localStorage.setItem('cafe_list', JSON.stringify(data));
+  // Status.OK는 지도 API에서 성공적으로 데이터를 가져왔을 때의 상태
   if (status === kakao.maps.services.Status.OK) {
+    // data : 지도 api에서 가져온 정보를 담는 배열
     for (var i = 0; i < data.length; i++) {
+      // data 요소에 해당하는 배열 부분 중 하나에 마커표시!
       displayMarker(data[i]);
       //   console.log(data);
     }
