@@ -1,6 +1,8 @@
 // *-----------------------지도 클릭 시, 카페 정보 가져와서 뿌리기 *-----------------------
 // 쿼리스트링 값 뽑아내기
+// window.location.search는 현재 URL 정보를 반환
 let queryString = window.location.search;
+// URLSearchParams(queryString) 메소드는 현재 쿼리스트링을 뽑아냄
 // URLSearchParams 객체를 생성하여 쿼리스트링을 파싱함
 let params = new URLSearchParams(queryString);
 
@@ -70,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const rating = ratingInput.value; // 별점의 숫자 값
         const content = contentInput.value;
 
+        // 사용자가 입력한 태그,별점,내용이 reviews 배열에 담김
         reviews.push({ tag, rating, content });
       }
     });
@@ -279,6 +282,7 @@ function filterReviews(tag) {
   filteredReviews = [];
 
   // 모든 리뷰 데이터 확인
+  // revieData - 목데이터
   reviewData.forEach((review) => {
     console.log(review);
     // 선택된 태그와 일치하는 리뷰인 경우
