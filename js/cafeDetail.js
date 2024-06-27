@@ -45,10 +45,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // *----------------------- 리뷰 작성하기 *-----------------------
-const reviewForm = document.getElementById('reviewForm');
-const submitButton = document.getElementById('btn_write');
+// const reviewForm = document.getElementById('reviewForm');
+// const submitButton = document.getElementById('btn_write');
 
 document.addEventListener('DOMContentLoaded', function () {
+  // *-----------------------지도 클릭 시, 카페 정보 가져와서 뿌리기 *-----------------------
+  // 쿼리스트링 값 뽑아내기
+  // window.location.search는 현재 URL 정보를 반환
+  let queryString = window.location.search;
+  // URLSearchParams(queryString) 메소드는 현재 쿼리스트링을 뽑아냄
+  // URLSearchParams 객체를 생성하여 쿼리스트링을 파싱함
+  let params = new URLSearchParams(queryString);
+
+  // 특정 파라미터의 값을 가져옴
+  let place_id = params.get('place_id');
+
+  localStorage.getItem('cafe_list');
+
+  const cafeList = JSON.parse(localStorage.getItem('cafe_list'));
+  console.log(cafeList);
+  const cafeInfo = cafeList.find((cafe) => {
+    if (cafe.id === place_id) {
+      return cafe;
+    }
+  });
+  console.log(cafeInfo);
+  displayPlaceDetails(cafeInfo);
+
+  const submitButton = document.getElementById('btn_write');
+
   submitButton.addEventListener('click', async function (event) {
     event.preventDefault(); // 기본 동작(폼 제출) 방지
 
@@ -89,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('Reviews added successfully!');
       // 여기에 추가적인 성공 처리 로직을 구현할 수 있습니다.
       alert('리뷰 작성이 완료되었습니다!');
-
+      const reviewForm = document.getElementById('reviewForm');
       // 리뷰 작성이 완료되면 폼을 초기화합니다.
       reviewForm.reset();
     } catch (error) {
@@ -112,6 +137,11 @@ async function addReviews(userId, author, date, reviews) {
   };
 
   try {
+    // 예외처리
+    // 프로그램 실행 도중에 발생하는 예기치 못한 오류를 처리하기 위해
+    // 만약 fetch라는 함수를 실행중에 오류가 발생하게 될 경우, (예를 들어서 존재하지 않는 url로 요청을 보낼 경우)
+    // 이를 처리하는 것도 프로그래밍에서 중요한 일. 이때 사용하는 게 try {} catch() {}
+    // try{} 내에서 발생하는 오류를 catch{}에서 잡아서 처리함.
     const response = await fetch(url, {
       method: 'POST', // 새 리소스 추가
       headers: {
@@ -119,6 +149,12 @@ async function addReviews(userId, author, date, reviews) {
       },
       body: JSON.stringify(data),
     });
+    // 비동기 처리
+    // 다음줄을 보면 response.ok 라는 윗 줄의 response를 이용하여 다음 줄이 실행되어야 하고,
+    // 그러면, 위에 줄이 "완료" 된 다음에 그 다음줄을 실행시키는 게 목적.
+    // fetch 비동기 함수로, 해당 함수가 "완료"되는 것을 js는 기다리지 않고, 다음줄을 실행시키려고 할 거임.
+    // 비동기 함수가 완료되길 강제로 기다리게 하는 것이 await 이다.
+    // await 을 사용하는 함수에는 async 라는 키워드를 붙여서 함수를 만들어줘야 함.
 
     if (!response.ok) {
       throw new Error('Network response was not ok');
