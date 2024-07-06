@@ -48,7 +48,6 @@ main {
 }
 
 main {
-  width: 1080px;
   height: auto;
   background-color: white;
   margin: auto; /* 가운데 정렬을 위해 추가 */
