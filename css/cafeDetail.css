@@ -386,13 +386,11 @@ img {
 .review_detail_tag button {
   margin: 5px;
 }
-
+/* 반응형 */
 @media (max-width: 1120px) {
   main {
-    width: 70%;
     align-items: center;
   }
-
   .picture {
     width: 100%;
   }

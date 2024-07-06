@@ -394,10 +394,10 @@ img-container {
   padding-left: 40px;
   padding-top: 30px;
 }
-
+/*
 @media (max-width: 700px) {
   #sidebar {
     width: 100vw;
   }
-  /* x버튼 하나 만들어서 여기서 display: block */
 }
+*/
