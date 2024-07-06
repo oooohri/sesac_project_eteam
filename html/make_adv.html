@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+< lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>광고 만들기 페이지</title>
+  <link rel="stylesheet" href="/sesac_project_eteam/css/mouse_cursor.css" />
+  <link rel="stylesheet" href="/sesac_project_eteam/css/make_adv.css" />
+  <!-- <link rel="stylesheet" href="../css/res.css" /> -->
+  <!-- 헤더푸터 -->
+  <script defer src="/sesac_project_eteam/js/mouse_cursor.js"></script>
+  <script
+    src="https://kit.fontawesome.com/35c503f1b7.js"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/35c503f1b7.js"
+    crossorigin="anonymous"
+  ></script>
+  <script defer src="../js/header_footer.js"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div id="cursor" style="top: 1060px; left: 996px"></div>
+  <header></header>
+  <main>
+    <div class="creative-section">
+      <div class="goal-section">
+        <h1 class="goal-text">광고 등록 페이지</h1>
+      </div>
+      <h2>광고 등록하기</h2>
+      <textarea
+        class="description"
+        placeholder="광고를 어떻게 구성하시겠어요?"
+      ></textarea>
+      <!-- 이미지 추가 기능 -->
+      <div class="image-upload-section">
+        <label class="image-upload-label right-align">
+          이미지 추가
+          <input type="file" accept="image/*" multiple style="display: none" />
+        </label>
+      </div>
+      <!-- 광고 미리보기 영역 -->
+      <div class="preview-section">
+        <h2>광고 사진 미리보기</h2>
+        <img src="#" alt="광고 사진 미리보기" class="ad-preview" />
+      </div>
+      <br />
+      <!-- 종료일 선택 옵션 -->
+      <div class="end-options">
+        <div>
+          <label for="end-date"><h2>종료 기간을 선택해주세요.</h2></label>
+          <div class="date-picker">
+            <div class="date-selector">
+              <label for="end-days" class="label">종료일 설정</label>
+              <div class="controls">
+                <button class="decrement">-</button>
+                <input type="text" id="end-days" value="6" class="days" />
+                <button class="increment">+</button>
+              </div>
+            </div>
+            <div>
+              <input
+                type="date"
+                class="end-date-picker"
+                placeholder="날짜 선택"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 일일 예산 설정 -->
+      <div class="budget-section">
+        <label for="budget">일일 예산</label>
+        <input
+          type="range"
+          id="budget"
+          min="2000"
+          max="500000"
+          step="1000"
+          value="2000"
+        />
+        <div class="flex">
+          <p>￦2000</p>
+          <div id="budget-display">￦2,000</div>
+          <p>￦500,000</p>
+        </div>
+        <div id="budget-result">
+          실제 지출되는 일일 금액과 다를 수 있습니다.
+        </div>
+      </div>
+      <!-- 국가 및 통화 변경 버튼 -->
+      <button id="pay" onclick="myFunction()">결제</button>
+      <!-- 계정 센터 -->
+      <div class="account-center">
+        <div class="center-details"></div>
+        <div class="center-price">
+          <div class="price-edit">&#9998;</div>
+          <div class="price-value" contenteditable>￦2,000</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+<script>
+  // 이미지 미리보기 기능 추가
+  const imageInput = document.querySelector('input[type="file"]');
+  const adPreview = document.querySelector('.ad-preview');
+  const adDescription = document.querySelector('.description');
+
+  imageInput.addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        adPreview.src = e.target.result;
+        adPreview.alt = adDescription.value; // 광고 설명과 동일한 alt 속성 설정
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // 광고 설명 입력 시 미리보기 alt 속성 업데이트
+  adDescription.addEventListener('input', function () {
+    adPreview.alt = adDescription.value;
+  });
+</script>
+<script>
+  document.querySelector('.decrement').addEventListener('click', function () {
+    const endDaysInput = document.getElementById('end-days');
+    let days = parseInt(endDaysInput.value);
+    if (days > 0) {
+      days--;
+      endDaysInput.value = days;
+    }
+  });
+
+  document.querySelector('.increment').addEventListener('click', function () {
+    const endDaysInput = document.getElementById('end-days');
+    let days = parseInt(endDaysInput.value);
+    days++;
+    endDaysInput.value = days;
+  });
+</script>
+<script>
+  // 일일 예산 바 조절 및 표시 업데이트
+  const budgetRange = document.getElementById('budget');
+  const budgetDisplay = document.getElementById('budget-display');
+
+  budgetRange.addEventListener('input', function () {
+    const budgetAmount = parseInt(budgetRange.value);
+    budgetDisplay.textContent = '￦' + budgetAmount.toLocaleString();
+  });
+  endDateCheckbox.addEventListener('change', function () {
+    endDatePicker.disabled = !endDateCheckbox.checked;
+    endDaysInput.disabled = endDateCheckbox.checked;
+    if (!endDateCheckbox.checked) {
+      endDaysInput.value = '0';
+    }
+  });
+
+  document.querySelector('.decrement').addEventListener('click', function () {
+    const days = parseInt(endDaysInput.value) - 1;
+    if (days >= 0) {
+      endDaysInput.value = days;
+    }
+  });
+
+  document.querySelector('.increment').addEventListener('click', function () {
+    const days = parseInt(endDaysInput.value) + 1;
+    endDaysInput.value = days;
+  });
+
+  endDaysInput.addEventListener('input', function () {
+    if (parseInt(endDaysInput.value) < 0) {
+      endDaysInput.value = 0;
+    }
+  });
+  function myFunction() {
+    window.location.assign('./pay(card).html');
+  }
+</script>

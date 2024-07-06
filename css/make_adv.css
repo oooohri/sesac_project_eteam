@@ -1,0 +1,328 @@
+/* CSS 스타일링 */
+/* 광고 미리보기 영역 스타일 */
+.preview-section {
+  margin-top: 30px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+body {
+  cursor: url('/sesac_project_eteam/img/2x/커서이미지.png');
+}
+
+.preview-section h2 {
+  margin-bottom: 10px;
+}
+
+.ad-preview {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: GangwonEdu_OTFBoldA;
+  color: #f07579;
+}
+
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: beige;
+  align-items: center;
+}
+
+.goal-text {
+  text-align: center;
+}
+
+.goal-section {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.goal-section .goal-text {
+  font-size: 40px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.creative-section {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 0 40px; /* 좌우 여백 설정 */
+  align-items: center;
+}
+
+.creative-section h2 {
+  margin-top: 0;
+}
+
+.description {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  resize: none;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.post-button {
+  float: right;
+  background-color: #f07579;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.right-align {
+  float: right;
+}
+
+.image-upload-section {
+  margin-bottom: 20px;
+}
+
+.image-upload-label {
+  display: inline-block;
+  background-color: #f07579;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.end-options {
+  margin-bottom: 20px;
+}
+
+.end-options label {
+  margin-right: 20px;
+}
+
+.date-picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.date-button {
+  background-color: #f07579;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.budget-section {
+  margin-bottom: 20px;
+}
+
+#budget {
+  width: 100%;
+}
+
+#budget-display {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#budget-result {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 45px;
+}
+
+#pay {
+  display: inline-block;
+  background-color: #f07579;
+  color: white;
+  padding: 20px 5%; /* 상대적인 값으로 변경 */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.account-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.center-icon {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.center-details {
+  flex: 1;
+}
+
+.center-title {
+  font-weight: bold;
+}
+
+.center-price {
+  display: flex;
+  align-items: center;
+}
+
+.price-edit {
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.price-value {
+  font-size: 24px;
+  color: #f07579;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.date-selector {
+  height: 40px;
+  width: 90%; /* 상대적인 값으로 변경 */
+  max-width: 650px; /* 최대 너비 지정 */
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(52, 51, 51);
+  padding: 10px;
+  margin: 15px auto; /* 가운데 정렬을 위해 수정 */
+  border-radius: 8px;
+}
+
+.end-date-picker {
+  height: 40px;
+  width: calc(100% - 30px); /* 상대적인 값으로 변경 */
+  max-width: 650px; /* 최대 너비 지정 */
+  align-items: center;
+  border: 2px solid rgb(52, 51, 51);
+  padding: 15px;
+  margin: 10px auto; /* 가운데 정렬을 위해 수정 */
+  border-radius: 8px;
+}
+
+.label {
+  margin-right: 10px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+input.days {
+  width: 40px;
+  text-align: center;
+  margin: 0 5px;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f07579;
+}
+
+button:active {
+  background-color: #f07579;
+}
+
+/* 원화 바꾸기 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content select {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+
+.dropdown-content button {
+  background-color: #f07579;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* 원화 바꾸기 끝 */
+
+.increment {
+  border-radius: 7px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decrement {
+  border-radius: 7px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#end-days {
+  border-radius: 10px;
+}
