@@ -331,6 +331,7 @@ footer {
   font-size: 15px;
   color: #fff;
   background: #f07579b7;
+  padding: 20px 0;
 }
 
 .footer-container {
@@ -349,14 +350,6 @@ main {
   margin-left: 280px;
   transition: 0.3s ease;
   min-height: calc(100vh - 56px - 265px);
-}
-
-footer {
-  margin-left: 0; /* 사이드바 영향을 받지 않도록 변경 */
-  width: 100%; /* 화면 전체 넓이를 사용하도록 설정 */
-  color: #fff;
-  padding: 20px 0; /* 상하 패딩으로 높이 조절, 좌우 패딩은 0 */
-  box-sizing: border-box; /* 패딩이 넓이에 포함되도록 설정 */
 }
 
 footer a {

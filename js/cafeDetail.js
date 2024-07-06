@@ -8,8 +8,8 @@ let params = new URLSearchParams(queryString);
 
 // 특정 파라미터의 값을 가져옴
 let place_id = params.get('place_id');
-
-localStorage.getItem('cafe_list');
+//oooohri.github.io/sesac_project_eteam/html/mypage.html
+https: localStorage.getItem('cafe_list');
 
 const cafeList = JSON.parse(localStorage.getItem('cafe_list'));
 console.log(cafeList);
@@ -155,7 +155,6 @@ async function addReviews(userId, author, date, reviews) {
     // fetch 비동기 함수로, 해당 함수가 "완료"되는 것을 js는 기다리지 않고, 다음줄을 실행시키려고 할 거임.
     // 비동기 함수가 완료되길 강제로 기다리게 하는 것이 await 이다.
     // await 을 사용하는 함수에는 async 라는 키워드를 붙여서 함수를 만들어줘야 함.
-
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
