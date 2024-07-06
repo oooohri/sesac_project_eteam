@@ -389,7 +389,7 @@ img-container {
 }
 
 .img-container img {
-  width: 90%;
+  /* width: 90%; */
   height: auto;
   padding-left: 40px;
   padding-top: 30px;
@@ -418,5 +418,10 @@ img-container {
   }
   .col-4 {
     display: block;
+  }
+}
+@media (max-width: 576px) {
+  #sidebar.hide {
+    width: 60px;
   }
 }
