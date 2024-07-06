@@ -387,6 +387,8 @@ img {
   margin: 5px;
 }
 /* 반응형 */
+@media (max-width: 576px) {
+}
 @media (max-width: 1120px) {
   main {
     align-items: center;
