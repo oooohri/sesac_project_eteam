@@ -116,7 +116,7 @@ document.querySelector('footer').innerHTML = `
                   <a class="no-decoration underline-hover" href="/sesac_project_eteam/html/term.html">서비스 이용약관</a>
           </div>
           <div class="row p-2 text-start">
-                  <a class="no-decoration underline-hover" href="/sesac_project_eteam/html/privacy.html">개인정보처리발침</a>
+                  <a class="no-decoration underline-hover" href="/sesac_project_eteam/html/privacy.html">개인정보 방침</a>
           </div>
       </div>
       <div class="col-4">
