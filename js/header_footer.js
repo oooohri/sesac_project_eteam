@@ -137,40 +137,64 @@ document.querySelector('footer').innerHTML = `
 
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu li a');
 
-// 사이드메뉴
-allSideMenu.forEach((item) => {
-  const li = item.parentElement;
+// // 사이드메뉴
+// allSideMenu.forEach((item) => {
+//   const li = item.parentElement;
 
-  item.addEventListener('click', function () {
-    allSideMenu.forEach((i) => {
-      i.parentElement.classList.remove('active');
-    });
-    li.classList.add('active');
-  });
-});
+//   item.addEventListener('click', function () {
+//     allSideMenu.forEach((i) => {
+//       i.parentElement.classList.remove('active');
+//     });
+//     li.classList.add('active');
+//   });
+// });
 
-// TOGGLE SIDEBAR
+// // TOGGLE SIDEBAR
+// const menuBar = document.querySelector('#content nav .bx.bx-menu');
+// const sidebar = document.getElementById('sidebar');
+
+// menuBar.addEventListener('click', function () {
+//   sidebar.classList.toggle('hide');
+
+//   if (sidebar.classList.value !== '') {
+//     document.querySelector('main').style.marginLeft = '56px';
+//   } else {
+//     document.querySelector('main').style.marginLeft = '280px';
+//   }
+// });
+// // TOGGLE SIDEBAR - 모바일
+// const xBox = document.querySelector('#menu-toggle .bi .bi-x-lg');
+// xBox.addEventListener('click', function () {
+//   sidebar.classList.toggle('hide');
+
+//   if (sidebar.classList.value !== '') {
+//     document.querySelector('main').style.marginLeft = '56px';
+//   } else {
+//     document.querySelector('main').style.marginLeft = '375px';
+//   }
+// });
 const menuBar = document.querySelector('#content nav .bx.bx-menu');
 const sidebar = document.getElementById('sidebar');
+const mainContent = document.querySelector('main');
+const xBox = document.querySelector('#menu-toggle .bi.bi-x-lg');
 
 menuBar.addEventListener('click', function () {
   sidebar.classList.toggle('hide');
 
-  if (sidebar.classList.value !== '') {
-    document.querySelector('main').style.marginLeft = '56px';
+  if (sidebar.classList.contains('hide')) {
+    mainContent.style.marginLeft = '56px';
   } else {
-    document.querySelector('main').style.marginLeft = '280px';
+    mainContent.style.marginLeft = '280px';
   }
 });
-// TOGGLE SIDEBAR - 모바일
-const xBox = document.querySelector('#menu-toggle .bi .bi-x-lg');
+
 xBox.addEventListener('click', function () {
   sidebar.classList.toggle('hide');
 
-  if (sidebar.classList.value !== '') {
-    document.querySelector('main').style.marginLeft = '56px';
+  if (sidebar.classList.contains('hide')) {
+    mainContent.style.marginLeft = '56px';
   } else {
-    document.querySelector('main').style.marginLeft = '375px';
+    mainContent.style.marginLeft = '375px';
   }
 });
 
