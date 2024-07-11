@@ -443,9 +443,14 @@ img-container {
   .footer-container > .row {
     padding-left: 0;
   }
-  @media (max-width: 375px) {
+  @media (max-width: 400px) {
     #sidebar {
       width: 375px;
+    }
+    div#menu-toggle {
+      padding-left: 10vh;
+      padding-top: 3vh;
+      font-size: 20px;
     }
   }
 }

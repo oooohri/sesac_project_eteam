@@ -1,7 +1,7 @@
 document.querySelector('header').innerHTML = `<section id="sidebar">
   <a href="/sesac_project_eteam/" class="brand img-container">
     <img src="/sesac_project_eteam/img/카페로_로고.png" alt="카페로_로고" />
-    <div id="menu-toggle" class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+    <div id="menu-toggle" class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-x-lg" viewBox="0 0 16 16">
     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
   </svg></div>
   </a>
@@ -160,6 +160,17 @@ menuBar.addEventListener('click', function () {
     document.querySelector('main').style.marginLeft = '56px';
   } else {
     document.querySelector('main').style.marginLeft = '280px';
+  }
+});
+// TOGGLE SIDEBAR - 모바일
+const xBox = document.querySelector('#menu-toggle .bi .bi-x-lg');
+xBox.addEventListener('click', function () {
+  sidebar.classList.toggle('hide');
+
+  if (sidebar.classList.value !== '') {
+    document.querySelector('main').style.marginLeft = '56px';
+  } else {
+    document.querySelector('main').style.marginLeft = '375px';
   }
 });
 
