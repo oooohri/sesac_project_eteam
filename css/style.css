@@ -453,4 +453,9 @@ img-container {
       font-size: 20px;
     }
   }
+  @media (min-width: 401px) {
+    #menu-toggle {
+      display: none;
+    }
+  }
 }
