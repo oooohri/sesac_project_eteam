@@ -419,9 +419,18 @@ img-container {
   .col-4 {
     display: block;
   }
+  .footer-container .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 @media (max-width: 576px) {
   #sidebar.hide {
     width: 60px;
+  }
+  main {
+    margin-left: 56px;
   }
 }
