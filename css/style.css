@@ -425,6 +425,9 @@ img-container {
     justify-content: center;
     align-items: center;
   }
+  .footer-container > .row {
+    padding-left: 0;
+  }
 }
 @media (max-width: 576px) {
   #sidebar.hide {
@@ -432,5 +435,8 @@ img-container {
   }
   main {
     margin-left: 56px;
+  }
+  .footer-container > .row {
+    padding-left: 0;
   }
 }
