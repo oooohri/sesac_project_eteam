@@ -417,7 +417,6 @@ img-container {
     width: 100%;
     padding: 30px 30px 0 30px;
     text-align: center;
-    font-size: 13px;
   }
   .col-4 {
     display: block;
@@ -430,6 +429,14 @@ img-container {
   }
   .footer-container > .row {
     padding-left: 0;
+  }
+}
+@media (max-width: 780px) {
+  .footer-container {
+    font-size: 13px;
+  }
+  footer .col-4 {
+    display: block;
   }
 }
 @media (max-width: 576px) {
