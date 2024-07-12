@@ -454,15 +454,21 @@ img-container {
     #sidebar {
       width: 375px;
     }
-    div#menu-toggle {
+    #menu-toggle {
       padding-left: 10vh;
       padding-top: 3vh;
       font-size: 20px;
     }
+    #menu-toggle {
+      display: block; /* 요소를 보이게 설정 */
+    }
+    #menu-toggle svg.bi.bi-x-lg {
+      display: inline; /* 혹시 svg 아이콘이 별도로 숨겨져 있을 경우 */
+    }
   }
   @media (min-width: 401px) {
-    div#menu-toggle svg.bi.bi-x-lg {
-      display: none !important;
+    #menu-toggle {
+      display: none; /* 요소를 숨기게 설정 */
     }
   }
 }
