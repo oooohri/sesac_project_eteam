@@ -461,7 +461,7 @@ img-container {
     }
   }
   @media (min-width: 401px) {
-    #menu-toggle svg.bi.bi-x-lg {
+    div#menu-toggle svg.bi.bi-x-lg {
       display: none !important;
     }
   }
