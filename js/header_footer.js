@@ -232,6 +232,8 @@ window.addEventListener('resize', function () {
   if (this.innerWidth > 576) {
     searchButtonIcon.classList.replace('bx-x', 'bx-search');
     searchForm.classList.remove('show');
+  } else {
+    if (!sidebar.classList.contains('hide')) sidebar.classList.add('hide');
   }
 });
 
