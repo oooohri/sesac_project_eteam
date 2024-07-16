@@ -232,8 +232,15 @@ window.addEventListener('resize', function () {
   if (this.innerWidth > 576) {
     searchButtonIcon.classList.replace('bx-x', 'bx-search');
     searchForm.classList.remove('show');
+    if (sidebar.classList.contains('hide')) {
+      sidebar.classList.remove('hide');
+      mainContent.style.marginLeft = null;
+    }
   } else {
-    if (!sidebar.classList.contains('hide')) sidebar.classList.add('hide');
+    if (!sidebar.classList.contains('hide')) {
+      sidebar.classList.add('hide');
+      mainContent.style.marginLeft = null;
+    }
   }
 });
 
