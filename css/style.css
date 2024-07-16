@@ -430,6 +430,11 @@ img-container {
   .footer-container > .row {
     padding-left: 0;
   }
+
+  .footer-container .col-3,
+  .footer-container .col-4 {
+    width: 100%;
+  }
 }
 @media (max-width: 780px) {
   .footer-container {
@@ -466,9 +471,10 @@ img-container {
       display: inline; /* 혹시 svg 아이콘이 별도로 숨겨져 있을 경우 */
     }
   }
-  @media (min-width: 401px) {
-    #menu-toggle {
-      display: none; /* 요소를 숨기게 설정 */
-    }
+}
+
+@media (min-width: 401px) {
+  #menu-toggle {
+    display: none; /* 요소를 숨기게 설정 */
   }
 }
