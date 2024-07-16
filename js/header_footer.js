@@ -1,10 +1,12 @@
 document.querySelector('header').innerHTML = `<section id="sidebar">
-  <a href="/sesac_project_eteam/" class="brand img-container">
-    <img src="/sesac_project_eteam/img/카페로_로고.png" alt="카페로_로고" />
+  <div  class="brand img-container">
+  <a href="/sesac_project_eteam/">
+   <img src="/sesac_project_eteam/img/카페로_로고.png" alt="카페로_로고" />
+  </a>
     <div id="menu-toggle" class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-x-lg" viewBox="0 0 16 16">
     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
   </svg></div>
-  </a>
+  </div>
   <ul class="side-menu main">
   
     <li data-li="info" class="active">
@@ -103,22 +105,22 @@ document.querySelector('footer').innerHTML = `
   <div class="row">
       <!-- Notice , FAQ, Service center cols -->
       <div class="col-3 align-items-center">
-          <div class="row p-2 text-start">
+          <div class="row p-2">
                   <a class="no-decoration underline-hover" href="#">공지사항</a>
           </div>
-          <div class="row p-2 text-start">
+          <div class="row p-2">
                   <a class="no-decoration underline-hover" href="#">자주 묻는 질문</a>
           </div>
-          <div class="row p-2 text-start">
+          <div class="row p-2">
                   <a class="no-decoration underline-hover" href="#">고객센터</a>
           </div>
       </div>
       <!-- Service center, privacy cols-->
       <div class="col-3">
-          <div class="row p-2 text-start">
+          <div class="row p-2">
                   <a class="no-decoration underline-hover" href="/sesac_project_eteam/html/term.html">서비스 이용약관</a>
           </div>
-          <div class="row p-2 text-start">
+          <div class="row p-2">
                   <a class="no-decoration underline-hover" href="/sesac_project_eteam/html/privacy.html">개인정보 방침</a>
           </div>
       </div>

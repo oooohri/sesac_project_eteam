@@ -431,8 +431,7 @@ img-container {
     padding-left: 0;
   }
 
-  .footer-container .col-3,
-  .footer-container .col-4 {
+  .footer-container .col-3 {
     width: 100%;
   }
 }
@@ -442,6 +441,7 @@ img-container {
   }
   footer .col-4 {
     display: block;
+    width: 100%;
   }
 }
 @media (max-width: 576px) {
